@@ -36,6 +36,17 @@ let g:airline_theme = 'papercolor'
 set ttimeoutlen=50
 
 
+"------------------------------------
+" emmet-vim
+"------------------------------------
+"lang属性を"ja"に設定
+let g:user_emmet_settings = {
+\ 'variables' : {
+\  'lang' : "ja"
+\ }
+\}
+
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
