@@ -10,6 +10,11 @@ Plug 'mattn/emmet-vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround'
+Plug 'tell-k/vim-browsereload-mac'
+Plug 'junegunn/vim-easy-align'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
@@ -45,6 +50,28 @@ let g:user_emmet_settings = {
 \  'lang' : "ja"
 \ }
 \}
+
+
+"------------------------------------
+" vim-browsereload-mac
+"------------------------------------
+nmap <Space>bc :ChromeReloadStart<CR>
+nmap <Space>bC :ChromeReloadStop<CR>
+nmap <Space>bf :FirefoxReloadStart<CR>
+nmap <Space>bF :FirefoxReloadStop<CR>
+nmap <Space>bs :SafariReloadStart<CR>
+nmap <Space>bS :SafariReloadStop<CR>
+nmap <Space>bo :OperaReloadStart<CR>
+nmap <Space>bO :OperaReloadStop<CR>
+nmap <Space>ba :AllBrowserReloadStart<CR>
+nmap <Space>bA :AllBrowserReloadStop<CR>
+
+
+"------------------------------------
+" vim-easy-align
+"------------------------------------
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 
 " setting
@@ -115,6 +142,8 @@ set showcmd
 set wrap
 " 省略されずに表示
 set display=lastline
+" 折り返した際のインデント位置を合わせる
+set breakindent
 " 補完メニューの高さ
 set pumheight=10
 " yでコピーした時にクリップボードに入る
