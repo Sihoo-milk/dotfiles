@@ -131,6 +131,8 @@ set virtualedit=block
 set backspace=indent,eol,start
 " 全角文字専用の設定
 set ambiwidth=double
+" ビジュアルモードでのヤンク後にカーソルを選択前の位置に戻さない
+vnoremap y y`>
 
 
 " 見た目系
@@ -190,7 +192,15 @@ set clipboard=unnamed,autoselect
 set mouse=a
 " コマンドモードの補完
 set wildmenu
-
+" カーソル形状
+if has('vim_starting')
+  " 挿入モード時に非点滅の縦棒タイプのカーソル
+  let &t_SI .= "\e[6 q"
+  " ノーマルモード時に非点滅のブロックタイプのカーソル
+  let &t_EI .= "\e[2 q"
+  " 置換モード時に非点滅の下線タイプのカーソル
+  let &t_SR .= "\e[4 q"
+endif
 
 
 " Tab系
@@ -219,17 +229,6 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-
-
-" カーソル形状
-if has('vim_starting')
-  " 挿入モード時に非点滅の縦棒タイプのカーソル
-  let &t_SI .= "\e[6 q"
-  " ノーマルモード時に非点滅のブロックタイプのカーソル
-  let &t_EI .= "\e[2 q"
-  " 置換モード時に非点滅の下線タイプのカーソル
-  let &t_SR .= "\e[4 q"
-endif
 
 
 " キーバインド
