@@ -7,6 +7,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
@@ -15,6 +18,9 @@ Plug 'tell-k/vim-browsereload-mac'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'othree/html5.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 
@@ -72,6 +78,36 @@ nmap <Space>bA :AllBrowserReloadStop<CR>
 "------------------------------------
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+
+"------------------------------------
+" vim-gitgutter
+"------------------------------------
+" 更新が反映されるまでの時間を短く設定
+set updatetime=100
+
+
+"------------------------------------
+" html5.vim
+"------------------------------------
+" イベントハンドラー属性のサポートを無効
+let g:html5_event_handler_attributes_complete = 0
+" RDFa属性のサポートを無効
+let g:html5_rdfa_attributes_complete = 0
+" microdata属性のサポートを無効
+let g:html5_microdata_attributes_complete = 0
+" WAI-ARIA属性のサポートを無効
+let g:html5_aria_attributes_complete = 0
+
+
+"------------------------------------
+" vim-css3-syntax
+"------------------------------------
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 
 " setting
