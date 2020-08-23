@@ -2,11 +2,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
+Plug 'alvan/vim-closetag'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -20,8 +23,37 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'pangloss/vim-javascript'
+Plug 'jlebensold/reilly_restaurants'
+Plug 'dense-analysis/ale'
+Plug 'luochen1990/rainbow'
 call plug#end()
+
+
+"------------------------------------
+" vim-devicons
+"------------------------------------
+" guifontを設定しないと文字化けになる。terminalで行ったフォントの設定と同様
+" 公式サイトではLinuxとmacOSの設定が若干異なるが、Linuxの設定でもmacOSで問題なし
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+set encoding=utf-8
+
+" フォルダアイコンを表示
+let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+" dir-icons
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
+let g:DevIconsDefaultFolderOpenSymbol = ''
+" file-icons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
+" after a re-source, fix syntax matching issues (concealing brackets):
+if exists('g:loaded_webdevicons')
+  call webdevicons#refresh()
+endif
 
 
 "----------------------------------------------------------
@@ -29,6 +61,23 @@ call plug#end()
 "----------------------------------------------------------
 " ショートカット
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+" The NERD Treeのウィンドウだけが残るような場合にVimを終了
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" icon設定
+let g:NERDTreeDirArrows = 1
+let NERDTreeWinSize=22
+" let NERDTreeShowHidden = 1
+
+
+"----------------------------------------------------------
+" vim-nerdtree-syntax-highlight
+"----------------------------------------------------------
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
 
 
 "----------------------------------------------------------
@@ -50,12 +99,61 @@ set ttimeoutlen=50
 "------------------------------------
 " emmet-vim
 "------------------------------------
-"lang属性を"ja"に設定
+" lang属性を"ja"に設定
 let g:user_emmet_settings = {
 \ 'variables' : {
 \  'lang' : "ja"
 \ }
 \}
+" tabで展開
+autocmd FileType html,css,scss imap <buffer><expr><tab>
+      \ emmet#isExpandable() ? "\<plug>(emmet-expand-abbr)" :
+      \ "\<tab>"
+
+
+"------------------------------------
+" vim-closetag
+"------------------------------------
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
 
 
 "------------------------------------
@@ -110,6 +208,24 @@ augroup VimCSS3Syntax
 augroup END
 
 
+"------------------------------------
+" ale
+"------------------------------------
+let g:ale_fix_on_save = 1
+" 特定のツールのみを使用
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+
+"------------------------------------
+" rainbow
+"------------------------------------
+let g:rainbow_active = 1
+
+
 " setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
@@ -133,6 +249,10 @@ set backspace=indent,eol,start
 set ambiwidth=double
 " ビジュアルモードでのヤンク後にカーソルを選択前の位置に戻さない
 vnoremap y y`>
+" 削除キーでyankしない
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
 
 
 " 見た目系
