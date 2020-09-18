@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
-Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
@@ -25,35 +24,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jlebensold/reilly_restaurants'
 Plug 'dense-analysis/ale'
-Plug 'luochen1990/rainbow'
 call plug#end()
-
-
-"------------------------------------
-" vim-devicons
-"------------------------------------
-" guifontを設定しないと文字化けになる。terminalで行ったフォントの設定と同様
-" 公式サイトではLinuxとmacOSの設定が若干異なるが、Linuxの設定でもmacOSで問題なし
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
-set encoding=utf-8
-
-" フォルダアイコンを表示
-let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
-" dir-icons
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:DevIconsEnableFoldersOpenClose = 1
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ''
-let g:DevIconsDefaultFolderOpenSymbol = ''
-" file-icons
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['html'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['css'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['txt'] = ''
-" after a re-source, fix syntax matching issues (concealing brackets):
-if exists('g:loaded_webdevicons')
-  call webdevicons#refresh()
-endif
 
 
 "----------------------------------------------------------
@@ -63,21 +34,6 @@ endif
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " The NERD Treeのウィンドウだけが残るような場合にVimを終了
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" icon設定
-let g:NERDTreeDirArrows = 1
-let NERDTreeWinSize=22
-" let NERDTreeShowHidden = 1
-
-
-"----------------------------------------------------------
-" vim-nerdtree-syntax-highlight
-"----------------------------------------------------------
-let s:rspec_red = 'FE405F'
-let s:git_orange = 'F54D27'
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
-let g:NERDTreePatternMatchHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreePatternMatchHighlightColor['.*_spec\.rb$'] = s:rspec_red " sets the color for files ending with _spec.rb
 
 
 "----------------------------------------------------------
@@ -220,12 +176,6 @@ let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \}
 let g:ale_fix_on_save = 1
-
-
-"------------------------------------
-" rainbow
-"------------------------------------
-let g:rainbow_active = 1
 
 
 " setting
