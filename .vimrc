@@ -24,6 +24,7 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jlebensold/reilly_restaurants'
 Plug 'dense-analysis/ale'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 call plug#end()
 
 
