@@ -18,6 +18,9 @@ Plug 'tpope/vim-fugitive'
 " -- Filer
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+" -- fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 " -- LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " -- Lint
@@ -336,3 +339,6 @@ noremap sl <C-w>l
 " -- Tab
 nnoremap gh gT
 nnoremap gl gt
+
+" -- fzf
+nnoremap <C-p> :Files<CR>
