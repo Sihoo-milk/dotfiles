@@ -34,8 +34,9 @@ Plug 'bronson/vim-trailing-whitespace'
 " -- Tag completion
 Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/tagalong.vim'
-" -- EJS
-Plug 'nikvdp/ejs-syntax'
+" -- JavaScript
+Plug 'othree/yajs.vim' " JavaScript syntax
+Plug 'nikvdp/ejs-syntax' " EJS syntax
 " -- PHP
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 
