@@ -1,201 +1,4 @@
 "====================================
-" Plugin
-"====================================
-call plug#begin('~/.vim/plugged')
-
-" -- Color scheme
-Plug 'arcticicestudio/nord-vim' " StatusLineで使用
-" -- Appearance
-Plug 'itchyny/lightline.vim'
-Plug 'rickhowe/diffchar.vim'
-" -- Window
-Plug 'simeji/winresizer'
-" -- Movement
-Plug 'easymotion/vim-easymotion'
-" -- git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-" -- Filer
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-" -- fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" -- LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" -- Lint
-Plug 'dense-analysis/ale'
-" -- Common to each language
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'bronson/vim-trailing-whitespace'
-" -- Tag completion
-Plug 'jiangmiao/auto-pairs'
-Plug 'AndrewRadev/tagalong.vim'
-" -- JavaScript
-Plug 'othree/yajs.vim' " JavaScript syntax
-Plug 'nikvdp/ejs-syntax' " EJS syntax
-" -- PHP
-Plug 'captbaritone/better-indent-support-for-php-with-html'
-
-call plug#end()
-
-"------------------------------------
-" vim-gitgutter
-"------------------------------------
-set updatetime=100 " 更新が反映されるまでの時間を短く設定
-set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表示させて画面のズレを無くす
-
-"------------------------------------
-" lightline.vim
-"------------------------------------
-let g:lightline = {
-  \ 'colorscheme': 'nord',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
-  \ },
-  \ }
-
-"------------------------------------
-" emmet-vim
-"------------------------------------
-let g:user_emmet_leader_key=','
-
-let g:user_emmet_settings = {
-\  'variables': {'lang': 'ja'},
-\  'html': {
-\    'default_attributes': {
-\      'option': {'value': v:null},
-\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
-\    },
-\    'snippets': {
-\      'html:5': "<!DOCTYPE html>\n"
-\              ."<html lang=\"${lang}\">\n"
-\              ."<head>\n"
-\              ."\t<meta charset=\"${charset}\">\n"
-\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
-\              ."\t<meta name=\"description\" content=\"\">\n"
-\              ."\t<meta name=\"author\" content=\"\">\n"
-\              ."\t<meta name=\"og:type\" content=\"\">\n"
-\              ."\t<meta name=\"og:title\" content=\"\">\n"
-\              ."\t<meta name=\"og:image\" content=\"\">\n"
-\              ."\t<meta name=\"og:site_name\" content=\"\">\n"
-\              ."\t<title></title>\n"
-\              ."\t<link rel=\"canonical\" href=\"\">\n"
-\              ."\t<link rel=\"stylesheet\" href=\"\">\n"
-\              ."</head>\n"
-\              ."<body>\n\t${child}|\n</body>\n"
-\              ."</html>",
-\    },
-\  },
-\}
-
-"------------------------------------
-" lambdalisue/fern.vim
-"------------------------------------
-" 警告メッセージを無効にする
-let g:fern_disable_startup_warnings = 1
-
-"------------------------------------
-" neoclide/coc.nvim
-"------------------------------------
-" -- LightLineにcoc.nvimのステータスを載せる
-let g:lightline = {
-  \'active': {
-    \'right': [
-      \['coc']
-    \]
-  \},
-  \'component_function': {
-    \'coc': 'coc#status'
-  \}
-\}
-
-" -- ショートカット
-" スペース2回でCocList
-nmap <silent> <space><space> :<C-u>CocList<cr>
-" スペースhでHover
-nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
-" スペースdfでDefinition
-nmap <silent> <space>df <Plug>(coc-definition)
-" スペースrfでReferences
-nmap <silent> <space>rf <Plug>(coc-references)
-" スペースrnでRename
-nmap <silent> <space>rn <Plug>(coc-rename)
-" スペースfmtでFormat
-nmap <silent> <space>fmt <Plug>(coc-format)
-
-" -- autocomplete
-inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
-inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
-
-hi CocSearch ctermfg=181 guifg=#e2a478
-
-" coc-html設定: 属性部分で改行
-let g:html_format_wrap_attributes = "force"
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-"------------------------------------
-" vim-easy-align
-"------------------------------------
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-"------------------------------------
-" ale
-"------------------------------------
-let g:ale_fix_on_save = 1
-
-" -- 特定のツールのみを使用
-let g:ale_fixers = {
-\  '*': ['remove_trailing_lines', 'trim_whitespace'],
-\  'javascript': ['eslint'],
-\}
-let g:ale_fix_on_save = 1
-
-"------------------------------------
-" itchyny/lightline.vim
-"------------------------------------
-if !has('gui_running')
-  set t_Co=256
-endif
-
-set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-set statusline^=%{coc#status()}
-
-"------------------------------------
-" nikvdp/ejs-syntax
-"------------------------------------
-autocmd BufNewFile,BufRead *.ejs set filetype=ejs
-autocmd BufNewFile,BufRead *._ejs set filetype=ejs
-
-function! s:DetectEjs()
-    if getline(1) =~ '^#!.*\<ejs\>'
-        set filetype=ejs
-    endif
-endfunction
-autocmd BufNewFile,BufRead * call s:DetectEjs()
-
-"====================================
 " Basic setting
 "====================================
 set backspace=indent,eol,start " BackSpaceで削除ができない場合に追加
@@ -341,5 +144,206 @@ noremap sl <C-w>l
 nnoremap gh gT
 nnoremap gl gt
 
+"====================================
+" Plugin
+"====================================
+call plug#begin('~/.vim/plugged')
+
+" -- Color scheme
+" StatusLineで使用
+Plug 'arcticicestudio/nord-vim'
+" -- Appearance
+Plug 'itchyny/lightline.vim'
+Plug 'rickhowe/diffchar.vim'
+" -- Window
+Plug 'simeji/winresizer'
+" -- Movement
+Plug 'easymotion/vim-easymotion'
+" -- git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+" -- Filer
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
 " -- fzf
-nnoremap <C-p> :Files<CR>
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" -- LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" -- Lint
+Plug 'dense-analysis/ale'
+" -- Common to each language
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'bronson/vim-trailing-whitespace'
+" -- Tag completion
+Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/tagalong.vim'
+" -- JavaScript
+" JavaScript syntax
+Plug 'othree/yajs.vim'
+" EJS syntax
+Plug 'nikvdp/ejs-syntax'
+" -- PHP
+Plug 'captbaritone/better-indent-support-for-php-with-html'
+
+call plug#end()
+
+"------------------------------------
+" vim-gitgutter
+"------------------------------------
+set updatetime=100 " 更新が反映されるまでの時間を短く設定
+set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表示させて画面のズレを無くす
+
+"------------------------------------
+" lightline.vim
+"------------------------------------
+let g:lightline = {
+  \ 'colorscheme': 'nord',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \ }
+
+"------------------------------------
+" emmet-vim
+"------------------------------------
+let g:user_emmet_leader_key=','
+
+let g:user_emmet_settings = {
+\  'variables': {'lang': 'ja'},
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'html:5': "<!DOCTYPE html>\n"
+\              ."<html lang=\"${lang}\">\n"
+\              ."<head>\n"
+\              ."\t<meta charset=\"${charset}\">\n"
+\              ."\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n"
+\              ."\t<meta name=\"description\" content=\"\">\n"
+\              ."\t<meta name=\"author\" content=\"\">\n"
+\              ."\t<meta name=\"og:type\" content=\"\">\n"
+\              ."\t<meta name=\"og:title\" content=\"\">\n"
+\              ."\t<meta name=\"og:image\" content=\"\">\n"
+\              ."\t<meta name=\"og:site_name\" content=\"\">\n"
+\              ."\t<title></title>\n"
+\              ."\t<link rel=\"canonical\" href=\"\">\n"
+\              ."\t<link rel=\"stylesheet\" href=\"\">\n"
+\              ."</head>\n"
+\              ."<body>\n\t${child}|\n</body>\n"
+\              ."</html>",
+\    },
+\  },
+\}
+
+"------------------------------------
+" lambdalisue/fern.vim
+"------------------------------------
+nnoremap <Leader>f :Fern .<CR>
+
+" 警告メッセージを無効にする
+let g:fern_disable_startup_warnings = 1
+
+"------------------------------------
+" junegunn/fzf.vim
+"------------------------------------
+nnoremap <Leader>p :Files<CR>
+
+"------------------------------------
+" neoclide/coc.nvim
+"------------------------------------
+" -- LightLineにcoc.nvimのステータスを載せる
+let g:lightline = {
+  \'active': {
+    \'right': [
+      \['coc']
+    \]
+  \},
+  \'component_function': {
+    \'coc': 'coc#status'
+  \}
+\}
+
+" -- ショートカット
+" スペース2回でCocList
+nmap <silent> <space><space> :<C-u>CocList<cr>
+" スペースhでHover
+nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
+" スペースdfでDefinition
+nmap <silent> <space>df <Plug>(coc-definition)
+" スペースrfでReferences
+nmap <silent> <space>rf <Plug>(coc-references)
+" スペースrnでRename
+nmap <silent> <space>rn <Plug>(coc-rename)
+" スペースfmtでFormat
+nmap <silent> <space>fmt <Plug>(coc-format)
+
+" -- autocomplete
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+
+hi CocSearch ctermfg=181 guifg=#e2a478
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"------------------------------------
+" vim-easy-align
+"------------------------------------
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+"------------------------------------
+" ale
+"------------------------------------
+let g:ale_fix_on_save = 1
+
+" -- 特定のツールのみを使用
+let g:ale_fixers = {
+\  '*': ['remove_trailing_lines', 'trim_whitespace'],
+\  'javascript': ['eslint'],
+\}
+let g:ale_fix_on_save = 1
+
+"------------------------------------
+" itchyny/lightline.vim
+"------------------------------------
+if !has('gui_running')
+  set t_Co=256
+endif
+
+set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+set statusline^=%{coc#status()}
+
+"------------------------------------
+" nikvdp/ejs-syntax
+"------------------------------------
+autocmd BufNewFile,BufRead *.ejs set filetype=ejs
+autocmd BufNewFile,BufRead *._ejs set filetype=ejs
+
+function! s:DetectEjs()
+    if getline(1) =~ '^#!.*\<ejs\>'
+        set filetype=ejs
+    endif
+endfunction
+autocmd BufNewFile,BufRead * call s:DetectEjs()
