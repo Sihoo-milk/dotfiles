@@ -9,7 +9,7 @@ set list " タブ、空白、改行を可視化
 set wrap " 画面の端で行を折り返す
 set display=lastline " 省略されずに表示
 set title " 編集中ファイル名の表示
-set visualbell " ビープ音を可視化
+set vb t_vb= " beep音を止めて、画面の点滅もさせない
 set noerrorbells " エラーメッセージの表示時にビープを鳴らさない
 set cmdheight=2 " メッセージ表示欄を2行確保
 set laststatus=2 " ステータスを表示
@@ -149,6 +149,8 @@ nnoremap gl gt
 "====================================
 call plug#begin('~/.vim/plugged')
 
+" -- Font
+Plug 'lambdalisue/nerdfont.vim'
 " -- Color scheme
 " StatusLineで使用
 Plug 'arcticicestudio/nord-vim'
@@ -214,7 +216,8 @@ let g:lightline = {
 "------------------------------------
 " emmet-vim
 "------------------------------------
-let g:user_emmet_leader_key=','
+" インデントの問題を回避
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 let g:user_emmet_settings = {
 \  'variables': {'lang': 'ja'},
@@ -248,10 +251,10 @@ let g:user_emmet_settings = {
 "------------------------------------
 " lambdalisue/fern.vim
 "------------------------------------
-nnoremap <Leader>f :Fern .<CR>
+nnoremap <Leader>n :Fern .<CR>
 
-" 警告メッセージを無効にする
-let g:fern_disable_startup_warnings = 1
+let g:fern_disable_startup_warnings = 1 " 警告メッセージを無効にする
+let g:fern#default_hidden=1 " 隠しファイルを表示する
 
 "------------------------------------
 " junegunn/fzf.vim
