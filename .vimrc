@@ -1,4 +1,60 @@
 "====================================
+" Plugin
+"====================================
+call plug#begin('~/.vim/plugged')
+
+" -- Font
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'ryanoasis/vim-devicons'
+" -- Color scheme
+" StatusLineで使用
+Plug 'arcticicestudio/nord-vim'
+" -- Appearance
+Plug 'itchyny/lightline.vim'
+Plug 'rickhowe/diffchar.vim'
+" -- Window
+Plug 'simeji/winresizer'
+" -- Movement
+Plug 'easymotion/vim-easymotion'
+" -- git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+" -- Filer
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+" -- fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" -- LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" -- Lint
+Plug 'dense-analysis/ale'
+" -- Common to each language
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'bronson/vim-trailing-whitespace'
+" -- Tag completion
+Plug 'jiangmiao/auto-pairs'
+Plug 'AndrewRadev/tagalong.vim'
+" -- HTML
+Plug 'othree/html5.vim'
+" -- Sass
+Plug 'JulesWang/css.vim'
+Plug 'cakebaker/scss-syntax.vim'
+" -- JavaScript
+" JavaScript syntax
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+" EJS syntax
+Plug 'nikvdp/ejs-syntax'
+" -- PHP
+Plug 'captbaritone/better-indent-support-for-php-with-html'
+
+call plug#end()
+
+"====================================
 " Basic setting
 "====================================
 set backspace=indent,eol,start " BackSpaceで削除ができない場合に追加
@@ -144,55 +200,6 @@ noremap sl <C-w>l
 nnoremap gh gT
 nnoremap gl gt
 
-"====================================
-" Plugin
-"====================================
-call plug#begin('~/.vim/plugged')
-
-" -- Font
-Plug 'lambdalisue/nerdfont.vim'
-" -- Color scheme
-" StatusLineで使用
-Plug 'arcticicestudio/nord-vim'
-" -- Appearance
-Plug 'itchyny/lightline.vim'
-Plug 'rickhowe/diffchar.vim'
-" -- Window
-Plug 'simeji/winresizer'
-" -- Movement
-Plug 'easymotion/vim-easymotion'
-" -- git
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-" -- Filer
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-git-status.vim'
-" -- fzf
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-" -- LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" -- Lint
-Plug 'dense-analysis/ale'
-" -- Common to each language
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
-Plug 'bronson/vim-trailing-whitespace'
-" -- Tag completion
-Plug 'jiangmiao/auto-pairs'
-Plug 'AndrewRadev/tagalong.vim'
-" -- JavaScript
-" JavaScript syntax
-Plug 'othree/yajs.vim'
-" EJS syntax
-Plug 'nikvdp/ejs-syntax'
-" -- PHP
-Plug 'captbaritone/better-indent-support-for-php-with-html'
-
-call plug#end()
-
 "------------------------------------
 " vim-gitgutter
 "------------------------------------
@@ -211,6 +218,8 @@ let g:lightline = {
   \ 'component_function': {
   \   'gitbranch': 'FugitiveHead'
   \ },
+  \ 'separator': { 'left': "\ue0c0 ", 'right': "\ue0c2 " },
+  \ 'subseparator': { 'left': "\ue0bd ", 'right': "\ue0bf " },
   \ }
 
 "------------------------------------
@@ -277,18 +286,18 @@ let g:lightline = {
 \}
 
 " -- ショートカット
-" スペース2回でCocList
-nmap <silent> <space><space> :<C-u>CocList<cr>
-" スペースhでHover
-nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
-" スペースdfでDefinition
-nmap <silent> <space>df <Plug>(coc-definition)
-" スペースrfでReferences
-nmap <silent> <space>rf <Plug>(coc-references)
-" スペースrnでRename
-nmap <silent> <space>rn <Plug>(coc-rename)
-" スペースfmtでFormat
-nmap <silent> <space>fmt <Plug>(coc-format)
+" " スペース2回でCocList
+" nmap <silent> <space><space> :<C-u>CocList<cr>
+" " スペースhでHover
+" nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
+" " スペースdfでDefinition
+" nmap <silent> <space>df <Plug>(coc-definition)
+" " スペースrfでReferences
+" nmap <silent> <space>rf <Plug>(coc-references)
+" " スペースrnでRename
+" nmap <silent> <space>rn <Plug>(coc-rename)
+" " スペースfmtでFormat
+" nmap <silent> <space>fmt <Plug>(coc-format)
 
 " -- autocomplete
 inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
