@@ -207,22 +207,6 @@ set updatetime=100 " 更新が反映されるまでの時間を短く設定
 set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表示させて画面のズレを無くす
 
 "------------------------------------
-" lightline.vim
-"------------------------------------
-let g:lightline = {
-  \ 'colorscheme': 'nord',
-  \ 'active': {
-  \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
-  \ },
-  \ 'separator': { 'left': "\ue0c0 ", 'right': "\ue0c2 " },
-  \ 'subseparator': { 'left': "\ue0bd ", 'right': "\ue0bf " },
-  \ }
-
-"------------------------------------
 " emmet-vim
 "------------------------------------
 " インデントの問題を回避
@@ -273,17 +257,6 @@ nnoremap <Leader>p :Files<CR>
 "------------------------------------
 " neoclide/coc.nvim
 "------------------------------------
-" -- LightLineにcoc.nvimのステータスを載せる
-let g:lightline = {
-  \'active': {
-    \'right': [
-      \['coc']
-    \]
-  \},
-  \'component_function': {
-    \'coc': 'coc#status'
-  \}
-\}
 
 " -- ショートカット
 " " スペース2回でCocList
@@ -326,28 +299,6 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 "------------------------------------
-" itchyny/lightline.vim
-"------------------------------------
-if !has('gui_running')
-  set t_Co=256
-endif
-
-set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-set statusline^=%{coc#status()}
-
-"------------------------------------
 " nikvdp/ejs-syntax
 "------------------------------------
 autocmd BufNewFile,BufRead *.ejs set filetype=ejs
@@ -359,3 +310,24 @@ function! s:DetectEjs()
     endif
 endfunction
 autocmd BufNewFile,BufRead * call s:DetectEjs()
+
+"------------------------------------
+" itchyny/lightline.vim
+"------------------------------------
+if !has('gui_running')
+  set t_Co=256
+endif
+
+set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
+set statusline^=%{coc#status()}
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
