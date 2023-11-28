@@ -71,7 +71,8 @@ set cmdheight=2 " メッセージ表示欄を2行確保
 set laststatus=2 " ステータスを表示
 set ambiwidth=double " ○や□などの文字が重ならないようにする
 set fenc=utf-8 " 文字コードをUFT-8に設定
-set list listchars=tab:\▸\-,extends:»,precedes:«,nbsp:% " 不可視文字を可視化(タブが「▸-」と表示される)
+set list " タブ、空白、改行を可視化
+set listchars=tab:▸\ ,eol:↲,extends:»,precedes:«,nbsp:% " 不可視文字の指定
 set guioptions+=a " yでコピーした時にクリップボードに入る
 set clipboard=unnamed,autoselect " ヤンクでクリップボードにコピー
 set ambiwidth=double " 全角文字専用の設定
