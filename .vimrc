@@ -300,6 +300,13 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 "------------------------------------
+" JulesWang/css.vim
+" cakebaker/scss-syntax.vim
+"------------------------------------
+au BufRead,BufNewFile *.scss set filetype=scss.css
+autocmd FileType scss set iskeyword+=-
+
+"------------------------------------
 " nikvdp/ejs-syntax
 "------------------------------------
 autocmd BufNewFile,BufRead *.ejs set filetype=ejs
