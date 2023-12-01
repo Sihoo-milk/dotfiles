@@ -49,6 +49,8 @@ Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
 " EJS syntax
 Plug 'nikvdp/ejs-syntax'
+" JSON
+Plug 'elzr/vim-json'
 " -- PHP
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 
