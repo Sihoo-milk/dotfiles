@@ -210,7 +210,7 @@ set updatetime=100 " 更新が反映されるまでの時間を短く設定
 set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表示させて画面のズレを無くす
 
 "------------------------------------
-" emmet-vim
+" mattn/emmet-vim
 "------------------------------------
 " インデントの問題を回避
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
