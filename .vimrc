@@ -16,7 +16,6 @@ Plug 'rickhowe/diffchar.vim'
 Plug 'simeji/winresizer'
 " -- Movement
 Plug 'easymotion/vim-easymotion'
-Plug 'yuttie/comfortable-motion.vim'
 " -- git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
