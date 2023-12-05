@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " -- Font
 Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 " -- Color scheme
 " StatusLineで使用
@@ -203,6 +204,11 @@ nnoremap gh gT
 nnoremap gl gt
 
 "------------------------------------
+" ryanoasis/vim-devicons
+"------------------------------------
+set encoding=UTF-8
+
+"------------------------------------
 " vim-gitgutter
 "------------------------------------
 set updatetime=100 " 更新が反映されるまでの時間を短く設定
@@ -250,6 +256,7 @@ nnoremap <Leader>n :Fern .<CR>
 
 let g:fern_disable_startup_warnings = 1 " 警告メッセージを無効にする
 let g:fern#default_hidden=1 " 隠しファイルを表示する
+let g:fern#renderer = "nerdfont" "アイコン表示
 
 "------------------------------------
 " junegunn/fzf.vim
