@@ -35,11 +35,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
-" -- Tag completion
 Plug 'jiangmiao/auto-pairs'
-Plug 'AndrewRadev/tagalong.vim'
 " -- HTML
 Plug 'othree/html5.vim'
+Plug 'AndrewRadev/tagalong.vim'
 " -- Sass
 Plug 'JulesWang/css.vim'
 Plug 'cakebaker/scss-syntax.vim'
