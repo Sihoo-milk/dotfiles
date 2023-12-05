@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 
 " -- Font
 Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 " -- Color scheme
 " StatusLineで使用
@@ -23,6 +22,7 @@ Plug 'tpope/vim-fugitive'
 " -- Filer
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " -- fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
