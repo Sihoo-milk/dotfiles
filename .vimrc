@@ -214,6 +214,19 @@ set encoding=UTF-8
 set updatetime=100 " 更新が反映されるまでの時間を短く設定
 set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表示させて画面のズレを無くす
 
+" g]で前の変更箇所へ移動する
+nnoremap g[ :GitGutterPrevHunk<CR>
+" g[で次の変更箇所へ移動する
+nnoremap g] :GitGutterNextHunk<CR>
+" ghでdiffをハイライトする
+nnoremap gh :GitGutterLineHighlightsToggle<CR>
+" gpでカーソル行のdiffを表示する
+nnoremap gp :GitGutterPreviewHunk<CR>
+" -- 記号の色を変更する
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=blue
+highlight GitGutterDelete ctermfg=red
+
 "------------------------------------
 " mattn/emmet-vim
 "------------------------------------
