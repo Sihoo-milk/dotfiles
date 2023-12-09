@@ -79,11 +79,16 @@ set guioptions+=a " yでコピーした時にクリップボードに入る
 set clipboard=unnamed,autoselect " ヤンクでクリップボードにコピー
 set ambiwidth=double " 全角文字専用の設定
 
-" -- 全角スペースにシンタックスハイライトをかける
 augroup highlightIdegraphicSpace
   autocmd!
+  " -- 全角スペースにシンタックスハイライトをかける
   autocmd Colorscheme * highlight IdeographicSpace term=underline ctermbg=24 guibg=#6b7089
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
+  " -- Diffでシンタックス付きの文字を表示する
+  autocmd ColorScheme * hi DiffAdd guifg=NONE
+  autocmd ColorScheme * hi DiffDelete guifg=NONE
+  autocmd ColorScheme * hi DiffText guifg=NONE
+  autocmd ColorScheme * hi DiffChange guifg=NONE
 augroup END
 
 " -- Syntax highlight
