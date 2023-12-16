@@ -271,21 +271,6 @@ nnoremap <Leader>p :Files<CR>
 "------------------------------------
 " neoclide/coc.nvim
 "------------------------------------
-
-" -- ショートカット
-" " スペース2回でCocList
-" nmap <silent> <space><space> :<C-u>CocList<cr>
-" " スペースhでHover
-" nmap <silent> <space>h :<C-u>call CocAction('doHover')<cr>
-" " スペースdfでDefinition
-" nmap <silent> <space>df <Plug>(coc-definition)
-" " スペースrfでReferences
-" nmap <silent> <space>rf <Plug>(coc-references)
-" " スペースrnでRename
-" nmap <silent> <space>rn <Plug>(coc-rename)
-" " スペースfmtでFormat
-" nmap <silent> <space>fmt <Plug>(coc-format)
-
 " -- autocomplete
 inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
