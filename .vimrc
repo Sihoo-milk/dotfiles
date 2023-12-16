@@ -279,6 +279,8 @@ hi CocSearch ctermfg=181 guifg=#e2a478
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
 "------------------------------------
 " vim-easy-align
 "------------------------------------
