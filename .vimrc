@@ -37,6 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
+Plug 'wolandark/vim-live-server'
 " -- HTML
 Plug 'othree/html5.vim'
 Plug 'AndrewRadev/tagalong.vim'
