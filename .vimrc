@@ -93,6 +93,12 @@ augroup END
 
 autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 
+" 行末の空白に色を付ける
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+autocmd FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
+
 syntax enable
 colorscheme iceberg
 " colorscheme nord
@@ -126,7 +132,8 @@ set splitright " 新しいウィンドウを右に開く
 " -- Cursor
 set ruler " カーソル位置を表示
 set cursorline " カーソル行を強調表示
-vnoremap y y`> "ビジュアルモードでのヤンク後にカーソルを選択前の位置に戻さない
+" ビジュアルモードでのヤンク後にカーソルを選択前の位置に戻さない
+vnoremap y y`>
 if has('vim_starting')
   let &t_SI .= "\e[5 q" " 挿入モード時に非点滅の縦棒タイプのカーソル
   let &t_EI .= "\e[1 q" " ノーマルモード時に非点滅のブロックタイプのカーソル
@@ -333,7 +340,7 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'absolutepath', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
