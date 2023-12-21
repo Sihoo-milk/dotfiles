@@ -48,6 +48,10 @@ Plug 'cakebaker/scss-syntax.vim'
 " JavaScript syntax
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
+  \ 'do': 'make install'
+\}
 " EJS syntax
 Plug 'nikvdp/ejs-syntax'
 " JSON
@@ -312,6 +316,15 @@ let g:ale_fix_on_save = 1
 "------------------------------------
 au BufRead,BufNewFile *.scss set filetype=scss.css
 autocmd FileType scss set iskeyword+=-
+
+"------------------------------------
+" heavenshell/vim-jsdoc
+"------------------------------------
+" キーマッピングの有効化
+let g:jsdoc_enable_key_mappings = 1
+
+" lehreのパスを指定
+let g:jsdoc_tool_path_lehre = '/usr/local/bin/lehre' " lehreの実行ファイルのパスに置き換える
 
 "------------------------------------
 " nikvdp/ejs-syntax
