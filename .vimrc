@@ -104,10 +104,14 @@ match ExtraWhitespace /\s\+$/
 autocmd FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
 
 syntax enable
+set termguicolors
 colorscheme iceberg
 " colorscheme nord
 set background=dark
-set termguicolors
+
+if has('gui_running')
+  set guioptions+=a
+endif
 
 " -- Save
 set nobackup " バックアップファイルを作らない
