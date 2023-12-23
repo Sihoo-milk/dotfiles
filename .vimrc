@@ -88,11 +88,11 @@ set ambiwidth=double " 全角文字専用の設定
 " カラースキーム設定
 augroup myColorscheme
   autocmd!
-  autocmd ColorScheme * hi DiffAdd guifg=NONE
-  autocmd ColorScheme * hi DiffDelete guifg=NONE
-  autocmd ColorScheme * hi DiffText guifg=NONE
-  autocmd ColorScheme * hi DiffChange guifg=NONE
-  autocmd ColorScheme * hi IdeographicSpace term=underline ctermbg=24 guibg=#6b7089
+  autocmd ColorScheme * hi DiffAdd ctermbg=NONE guifg=NONE
+  autocmd ColorScheme * hi DiffDelete ctermbg=NONE guifg=NONE
+  autocmd ColorScheme * hi DiffText ctermbg=NONE guifg=NONE
+  autocmd ColorScheme * hi DiffChange ctermbg=NONE guifg=NONE
+  autocmd ColorScheme * hi IdeographicSpace ctermbg=24 guibg=#6b7089
 augroup END
 
 autocmd VimEnter,WinEnter * match IdeographicSpace /　/
