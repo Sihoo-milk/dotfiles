@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 "====================================
 " Plugin
 "====================================
@@ -68,7 +71,6 @@ set backspace=indent,eol,start " BackSpaceで削除ができない場合に追�
 set number " 行番号を表示
 set relativenumber " カーソル行からの相対的な行番号を表示
 set linespace=2
-set list " タブ、空白、改行を可視化
 set wrap " 画面の端で行を折り返す
 set display=lastline " 省略されずに表示
 set title " 編集中ファイル名の表示
@@ -83,35 +85,6 @@ set listchars=tab:▸\ ,eol:↲,extends:»,precedes:«,nbsp:% " 不可視文字�
 set guioptions+=a " yでコピーした時にクリップボードに入る
 set clipboard=unnamed,autoselect " ヤンクでクリップボードにコピー
 set ambiwidth=double " 全角文字専用の設定
-
-" -- Syntax highlight
-" カラースキーム設定
-augroup myColorscheme
-  autocmd!
-  autocmd ColorScheme * hi DiffAdd ctermbg=NONE guifg=NONE
-  autocmd ColorScheme * hi DiffDelete ctermbg=NONE guifg=NONE
-  autocmd ColorScheme * hi DiffText ctermbg=NONE guifg=NONE
-  autocmd ColorScheme * hi DiffChange ctermbg=NONE guifg=NONE
-  autocmd ColorScheme * hi IdeographicSpace ctermbg=24 guibg=#6b7089
-augroup END
-
-autocmd VimEnter,WinEnter * match IdeographicSpace /　/
-
-" 行末の空白に色を付ける
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
-autocmd FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
-
-syntax enable
-set termguicolors
-colorscheme iceberg
-" colorscheme nord
-set background=dark
-
-if has('gui_running')
-  set guioptions+=a
-endif
 
 " -- Save
 set nobackup " バックアップファイルを作らない
@@ -165,6 +138,33 @@ source $VIMRUNTIME/macros/matchit.vim " ノーマルモード時に「%」で対
 
 " -- Complement
 set completeopt=menuone,noinsert " 補完ウィンドウが表示された時に最初の1件目を選択状態にする
+
+" カラースキーム設定
+augroup vimrc
+  autocmd!
+augroup END
+
+autocmd vimrc ColorScheme *
+  \ highlight DiffAdd ctermfg=NONE guifg=NONE |
+  \ highlight DiffDelete ctermfg=NONE guifg=NONE |
+  \ highlight DiffText ctermfg=NONE guifg=NONE |
+  \ highlight DiffChange ctermfg=NONE guifg=NONE |
+  \ highlight IdeographicSpace ctermbg=24 guibg=#6b7089
+  " 行末の空白に色を付ける
+  \ highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd vimrc VimEnter,WinEnter * match IdeographicSpace /　/
+autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
+
+" -- Syntax highlight
+syntax enable
+set termguicolors
+colorscheme iceberg
+" colorscheme nord
+set background=dark
+
+if has('gui_running')
+  set guioptions+=a
+endif
 
 "====================================
 " Key mapping
@@ -227,7 +227,6 @@ nnoremap gl gt
 "------------------------------------
 " ryanoasis/vim-devicons
 "------------------------------------
-set encoding=UTF-8
 
 "------------------------------------
 " vim-gitgutter
@@ -292,7 +291,7 @@ inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
 inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-hi CocSearch ctermfg=181 guifg=#e2a478
+highlight CocSearch ctermfg=181 guifg=#e2a478
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
