@@ -88,11 +88,6 @@ set ambiwidth=double " 全角文字専用の設定
 " カラースキーム設定
 augroup myColorscheme
   autocmd!
-  autocmd Colorscheme * hi EndOfBuffer ctermbg=NONE guibg=NONE
-  autocmd Colorscheme * hi NonText ctermbg=NONE guibg=NONE
-  autocmd Colorscheme * hi LineNr ctermbg=NONE guibg=NONE
-  autocmd Colorscheme * hi Folded ctermbg=NONE guibg=NONE
-  autocmd Colorscheme * hi EndOfBuffer ctermbg=NONE guibg=NONE
   autocmd ColorScheme * hi DiffAdd guifg=NONE
   autocmd ColorScheme * hi DiffDelete guifg=NONE
   autocmd ColorScheme * hi DiffText guifg=NONE
