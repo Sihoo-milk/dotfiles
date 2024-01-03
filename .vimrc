@@ -171,7 +171,7 @@ endif
 "====================================
 let mapleader = "\<Space>"
 
-" -- 方向キーの無効化
+" -- キーの無効化
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -180,6 +180,7 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
+nnoremap s <Nop>
 
 " -- jキーを二度押しでESCキー
 inoremap <silent> jj <ESC>
