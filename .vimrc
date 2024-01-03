@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
 " -- Color scheme
+Plug 'cocopon/iceberg.vim'
 " StatusLineで使用
 Plug 'arcticicestudio/nord-vim'
 " -- Appearance
