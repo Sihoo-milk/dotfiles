@@ -16,6 +16,7 @@ Plug 'arcticicestudio/nord-vim'
 " -- Appearance
 Plug 'itchyny/lightline.vim'
 " Plug 'rickhowe/diffchar.vim'
+" Plug 'preservim/vim-indent-guides'
 " -- Window
 Plug 'simeji/winresizer'
 " -- Movement
@@ -52,10 +53,6 @@ Plug 'cakebaker/scss-syntax.vim'
 " JavaScript syntax
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'heavenshell/vim-jsdoc', {
-  \ 'for': ['javascript', 'javascript.jsx','typescript'],
-  \ 'do': 'make install'
-\}
 " EJS syntax
 Plug 'nikvdp/ejs-syntax'
 " JSON
@@ -364,3 +361,8 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+"------------------------------------
+" preservim/vim-indent-guides
+"------------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
