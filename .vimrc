@@ -157,7 +157,6 @@ autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlin
 syntax enable
 set termguicolors
 colorscheme iceberg
-" colorscheme nord
 set background=dark
 
 if has('gui_running')
