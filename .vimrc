@@ -153,6 +153,11 @@ autocmd vimrc ColorScheme *
 autocmd vimrc VimEnter,WinEnter * match IdeographicSpace /　/
 autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
 
+augroup vimrc vimdiff_settings
+  autocmd WinEnter * if &diff | set wrap | endif
+augroup END
+
+
 " -- Syntax highlight
 syntax enable
 set termguicolors
