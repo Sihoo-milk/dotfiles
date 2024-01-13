@@ -70,6 +70,9 @@ set number " 行番号を表示
 set relativenumber " カーソル行からの相対的な行番号を表示
 set linespace=2
 set wrap " 画面の端で行を折り返す
+if &diff
+  set wrap
+endif
 set display=lastline " 省略されずに表示
 set title " 編集中ファイル名の表示
 set vb t_vb= " beep音を止めて、画面の点滅もさせない
@@ -157,6 +160,14 @@ augroup vimrc vimdiff_settings
   autocmd WinEnter * if &diff | set wrap | endif
 augroup END
 
+command! -nargs=+ Diff call s:DiffWrapper(<args>)
+
+function! s:DiffWrapper(args)
+  execute 'vert diffs' a:args
+  if &diff
+    set wrap
+  endif
+endfunction
 
 " -- Syntax highlight
 syntax enable
