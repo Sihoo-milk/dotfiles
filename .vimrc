@@ -24,6 +24,8 @@ Plug 'easymotion/vim-easymotion'
 " -- git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'rbong/vim-flog'
+Plug 'junegunn/gv.vim'
 " -- Filer
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -71,8 +73,9 @@ set relativenumber " カーソル行からの相対的な行番号を表示
 set linespace=2
 set wrap " 画面の端で行を折り返す
 if &diff
-  set wrap
+  set wrap " vimdiffモードもwrapを有効にする
 endif
+windo set wrap
 set display=lastline " 省略されずに表示
 set title " 編集中ファイル名の表示
 set vb t_vb= " beep音を止めて、画面の点滅もさせない
@@ -155,19 +158,6 @@ autocmd vimrc ColorScheme *
   \ highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd vimrc VimEnter,WinEnter * match IdeographicSpace /　/
 autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
-
-augroup vimrc vimdiff_settings
-  autocmd WinEnter * if &diff | set wrap | endif
-augroup END
-
-command! -nargs=+ Diff call s:DiffWrapper(<args>)
-
-function! s:DiffWrapper(args)
-  execute 'vert diffs' a:args
-  if &diff
-    set wrap
-  endif
-endfunction
 
 " -- Syntax highlight
 syntax enable
