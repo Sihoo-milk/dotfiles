@@ -15,7 +15,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
 " -- Appearance
 Plug 'itchyny/lightline.vim'
-" Plug 'rickhowe/diffchar.vim'
+Plug 'rickhowe/diffchar.vim'
 " Plug 'preservim/vim-indent-guides'
 " -- Window
 Plug 'simeji/winresizer'
@@ -72,10 +72,6 @@ set number " 行番号を表示
 set relativenumber " カーソル行からの相対的な行番号を表示
 set linespace=2
 set wrap " 画面の端で行を折り返す
-if &diff
-  set wrap " vimdiffモードもwrapを有効にする
-endif
-windo set wrap
 set display=lastline " 省略されずに表示
 set title " 編集中ファイル名の表示
 set vb t_vb= " beep音を止めて、画面の点滅もさせない
@@ -142,6 +138,16 @@ source $VIMRUNTIME/macros/matchit.vim " ノーマルモード時に「%」で対
 
 " -- Complement
 set completeopt=menuone,noinsert " 補完ウィンドウが表示された時に最初の1件目を選択状態にする
+
+" -- 複数のウィンドウに対して実行
+windo set wrap
+
+" -- vimdiff
+if &diff
+  set wrap " vimdiffモードもwrapを有効にする
+  windo set scrollbind " 複数のウィンドウで同じ行を表示する
+  windo diffupdate
+endif
 
 " カラースキーム設定
 augroup vimrc
