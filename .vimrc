@@ -139,16 +139,6 @@ source $VIMRUNTIME/macros/matchit.vim " ノーマルモード時に「%」で対
 " -- Complement
 set completeopt=menuone,noinsert " 補完ウィンドウが表示された時に最初の1件目を選択状態にする
 
-" -- 複数のウィンドウに対して実行
-windo set wrap
-
-" -- vimdiff
-if &diff
-  set wrap " vimdiffモードもwrapを有効にする
-  windo set scrollbind " 複数のウィンドウで同じ行を表示する
-  windo diffupdate
-endif
-
 " カラースキーム設定
 augroup vimrc
   autocmd!
@@ -164,6 +154,9 @@ autocmd vimrc ColorScheme *
   \ highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd vimrc VimEnter,WinEnter * match IdeographicSpace /　/
 autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
+
+autocmd vimrc WinEnter * if &diff | set wrap | endif
+autocmd vimrc WinLeave  * if &diff | set wrap | endif
 
 " -- Syntax highlight
 syntax enable
