@@ -24,7 +24,6 @@ Plug 'easymotion/vim-easymotion'
 " -- git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
 Plug 'junegunn/gv.vim'
 " -- Filer
 Plug 'lambdalisue/fern.vim'
