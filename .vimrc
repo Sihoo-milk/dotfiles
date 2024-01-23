@@ -50,6 +50,7 @@ Plug 'AndrewRadev/tagalong.vim'
 " -- Sass
 Plug 'JulesWang/css.vim'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-haml'
 " -- JavaScript
 " JavaScript syntax
 Plug 'othree/yajs.vim'
@@ -274,7 +275,7 @@ let g:user_emmet_settings = {
 "------------------------------------
 " lambdalisue/fern.vim
 "------------------------------------
-nnoremap <Leader>n :Fern .<CR>
+nnoremap <Leader>n :Fern . -reveal=% -drawer -toggle -width=40<CR>
 
 let g:fern_disable_startup_warnings = 1 " 警告メッセージを無効にする
 let g:fern#default_hidden=1 " 隠しファイルを表示する
