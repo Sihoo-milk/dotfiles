@@ -6,6 +6,7 @@ scriptencoding utf-8
 "====================================
 call plug#begin('~/.vim/plugged')
 
+Plug 'mhinz/vim-startify'
 " -- Font
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'ryanoasis/vim-devicons'
