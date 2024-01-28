@@ -17,6 +17,7 @@ Plug 'arcticicestudio/nord-vim'
 " -- Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'rickhowe/diffchar.vim'
+" Plug 'Yggdroot/indentLine'
 " Plug 'preservim/vim-indent-guides'
 " -- Window
 Plug 'simeji/winresizer'
@@ -228,6 +229,37 @@ nnoremap gh gT
 nnoremap gl gt
 
 "------------------------------------
+" Yggdroot/indentLine
+"------------------------------------
+let g:indentLine_char_list = ['¦']
+
+"------------------------------------
+" itchyny/lightline.vim
+"------------------------------------
+if !has('gui_running')
+  set t_Co=256
+endif
+
+set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
+set statusline^=%{coc#status()}
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+"------------------------------------
+" preservim/vim-indent-guides
+"------------------------------------
+let g:indent_guides_enable_on_vim_startup = 1
+
+"------------------------------------
 " ryanoasis/vim-devicons
 "------------------------------------
 
@@ -275,7 +307,7 @@ let g:user_emmet_settings = {
 "------------------------------------
 " lambdalisue/fern.vim
 "------------------------------------
-nnoremap <Leader>n :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <Leader>n :Fern . -reveal=%<CR>
 
 let g:fern_disable_startup_warnings = 1 " 警告メッセージを無効にする
 let g:fern#default_hidden=1 " 隠しファイルを表示する
@@ -344,29 +376,3 @@ function! s:DetectEjs()
   endif
 endfunction
 autocmd BufNewFile,BufRead * call s:DetectEjs()
-
-"------------------------------------
-" itchyny/lightline.vim
-"------------------------------------
-if !has('gui_running')
-  set t_Co=256
-endif
-
-set noshowmode "ステータスライン下の`-- INSERT --`表示を非表示にする
-set statusline^=%{coc#status()}
-
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-"------------------------------------
-" preservim/vim-indent-guides
-"------------------------------------
-let g:indent_guides_enable_on_vim_startup = 1
