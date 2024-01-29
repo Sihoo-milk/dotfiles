@@ -34,7 +34,6 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " -- fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'itchyny/vim-parenmatch'
 " -- LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " -- Lint
@@ -232,6 +231,11 @@ nnoremap gl gt
 "設定ファイル読み込み
 nnoremap <F5> :source ~/.vimrc<Enter>
 nnoremap sou :source ~/.vimrc<Enter>
+
+" 奇数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#333333 ctermbg=235
+" 偶数インデントのカラー
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2c2c2c ctermbg=240
 
 "------------------------------------
 " Yggdroot/indentLine
