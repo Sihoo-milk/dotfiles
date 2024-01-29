@@ -232,11 +232,6 @@ nnoremap gl gt
 nnoremap <F5> :source ~/.vimrc<Enter>
 nnoremap sou :source ~/.vimrc<Enter>
 
-" 奇数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#333333 ctermbg=235
-" 偶数インデントのカラー
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#2c2c2c ctermbg=240
-
 "------------------------------------
 " Yggdroot/indentLine
 "------------------------------------
