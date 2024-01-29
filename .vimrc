@@ -34,6 +34,7 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " -- fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Plug 'itchyny/vim-parenmatch'
 " -- LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " -- Lint
@@ -227,6 +228,10 @@ noremap sl <C-w>l
 " -- Tab
 nnoremap gh gT
 nnoremap gl gt
+
+"設定ファイル読み込み
+nnoremap <F5> :source ~/.vimrc<Enter>
+nnoremap sou :source ~/.vimrc<Enter>
 
 "------------------------------------
 " Yggdroot/indentLine
