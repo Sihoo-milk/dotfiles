@@ -229,6 +229,10 @@ noremap sl <C-w>l
 nnoremap gh gT
 nnoremap gl gt
 
+"設定ファイル読み込み
+nnoremap <F5> :source ~/.vimrc<Enter>
+nnoremap sou :source ~/.vimrc<Enter>
+
 "------------------------------------
 " Yggdroot/indentLine
 "------------------------------------
