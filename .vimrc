@@ -34,7 +34,6 @@ Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 " -- fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'itchyny/vim-parenmatch'
 " -- LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " -- Lint
