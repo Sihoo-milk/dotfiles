@@ -142,24 +142,30 @@ source $VIMRUNTIME/macros/matchit.vim " ノーマルモード時に「%」で対
 " -- Complement
 set completeopt=menuone,noinsert " 補完ウィンドウが表示された時に最初の1件目を選択状態にする
 
-" カラースキーム設定
-augroup vimrc
+augroup UnnecessarySpace
   autocmd!
+  " 全角スペースに色を付ける
+  autocmd ColorScheme * highlight IdeographicSpace ctermbg=24 guibg=#6b7089
+  " 行末の空白に色を付ける
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+  " 全角スペースを強調表示
+  autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
 
-autocmd vimrc ColorScheme *
-  \ highlight DiffAdd ctermfg=NONE guifg=NONE |
-  \ highlight DiffDelete ctermfg=NONE guifg=NONE |
-  \ highlight DiffText ctermfg=NONE guifg=NONE |
-  \ highlight DiffChange ctermfg=NONE guifg=NONE |
-  \ highlight IdeographicSpace ctermbg=24 guibg=#6b7089
-  " 行末の空白に色を付ける
-  \ highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd vimrc VimEnter,WinEnter * match IdeographicSpace /　/
-autocmd vimrc FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
+augroup SyntaxControl
+  autocmd!
+  autocmd FileType html,jsp,asp,php,xml,perl syntax sync minlines=500 maxlines=1000
+augroup END
 
-autocmd vimrc WinEnter * if &diff | set wrap | endif
-autocmd vimrc WinLeave  * if &diff | set wrap | endif
+augroup Diff
+  autocmd!
+  autocmd ColorScheme * highlight DiffAdd ctermfg=NONE guifg=NONE
+  autocmd ColorScheme * highlight DiffDelete ctermfg=NONE guifg=NONE
+  autocmd ColorScheme * highlight DiffText ctermfg=NONE guifg=NONE
+  autocmd ColorScheme * highlight DiffChange ctermfg=NONE guifg=NONE
+  autocmd WinEnter * if &diff | set wrap | endif
+  autocmd WinLeave  * if &diff | set wrap | endif
+augroup END
 
 " -- Syntax highlight
 syntax enable
