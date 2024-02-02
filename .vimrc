@@ -47,7 +47,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
-Plug 'wolandark/vim-live-server'
+Plug 'https://github.com/wolandark/vim-live-server.git'
 " -- HTML
 Plug 'othree/html5.vim'
 Plug 'AndrewRadev/tagalong.vim'
@@ -164,7 +164,7 @@ augroup Diff
   autocmd ColorScheme * highlight DiffText ctermfg=NONE guifg=NONE
   autocmd ColorScheme * highlight DiffChange ctermfg=NONE guifg=NONE
   autocmd WinEnter * if &diff | set wrap | endif
-  autocmd WinLeave  * if &diff | set wrap | endif
+  autocmd WinLeave * if &diff | set wrap | endif
 augroup END
 
 " -- Syntax highlight
@@ -285,7 +285,7 @@ set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表�
 " APZelos/blamer.nvim
 "------------------------------------
 let g:blamer_enabled = 1 "blallerを有効化
-let g:blamer_delay = 300 "メッセージが表示されるまでのミリ秒単位の遅延
+let g:blamer_delay = 500 "メッセージが表示されるまでのミリ秒単位の遅延
 
 "------------------------------------
 " mattn/emmet-vim
