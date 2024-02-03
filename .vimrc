@@ -142,6 +142,20 @@ source $VIMRUNTIME/macros/matchit.vim " ノーマルモード時に「%」で対
 " -- Complement
 set completeopt=menuone,noinsert " 補完ウィンドウが表示された時に最初の1件目を選択状態にする
 
+let g:is_macos = has('mac')
+
+function! Disable() abort
+  if g:is_macos
+    call system('/path/to/im-select com.apple.keylayout.ABC')
+  else
+    call system('fcitx5-remote -c')
+  endif
+endfunction
+
+augroup IME_autotoggle
+  autocmd InsertLeave * call Disable()
+augroup END
+
 augroup UnnecessarySpace
   autocmd!
   " 全角スペースに色を付ける
@@ -284,7 +298,7 @@ set signcolumn=yes " 未修正の状態でもvim-gitgutterラインを常に表�
 "------------------------------------
 " APZelos/blamer.nvim
 "------------------------------------
-let g:blamer_enabled = 1 "blallerを有効化
+let g:blamer_enabled = 0 "blallerを有効化
 let g:blamer_delay = 500 "メッセージが表示されるまでのミリ秒単位の遅延
 
 "------------------------------------
