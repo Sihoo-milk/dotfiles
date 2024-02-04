@@ -17,7 +17,7 @@ Plug 'arcticicestudio/nord-vim'
 " -- Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'rickhowe/diffchar.vim'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Plug 'preservim/vim-indent-guides'
 " -- Window
 Plug 'simeji/winresizer'
@@ -65,6 +65,7 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'elzr/vim-json'
 " -- PHP
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'hesselbom/vim-hsftp'
 
 call plug#end()
 
