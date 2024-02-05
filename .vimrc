@@ -111,6 +111,7 @@ set autoindent " 改行時に前の行のインデントを継続する
 set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する。smartindentは、autoindentが設定済みの場合に限って有効
 set shiftwidth=2 " 行頭でのTab文字の表示幅
 
+" -- Window
 set splitbelow " 新しいウィンドウを下に開く
 set splitright " 新しいウィンドウを右に開く
 
