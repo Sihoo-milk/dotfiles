@@ -163,7 +163,7 @@ augroup UnnecessarySpace
   " 全角スペースに色を付ける
   autocmd ColorScheme * highlight IdeographicSpace ctermbg=24 guibg=#6b7089
   " 行末の空白に色を付ける
-  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+  autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkred guibg=darkred
   " 全角スペースを強調表示
   autocmd VimEnter,WinEnter * match IdeographicSpace /　/
 augroup END
