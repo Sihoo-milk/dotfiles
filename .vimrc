@@ -20,7 +20,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'rickhowe/diffchar.vim'
 Plug 'Yggdroot/indentLine'
 " Plug 'preservim/vim-indent-guides'
-Plug 'frazrepo/vim-rainbow'
 " -- Window
 Plug 'simeji/winresizer'
 " -- Movement
@@ -261,11 +260,6 @@ nnoremap sou :source ~/.vimrc<Enter>
 " Yggdroot/indentLine
 "------------------------------------
 let g:indentLine_char_list = ['¦']
-
-"------------------------------------
-" frazrepo/vim-rainbow
-"------------------------------------
-let g:rainbow_active = 0
 
 "------------------------------------
 " itchyny/lightline.vim
