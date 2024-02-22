@@ -6,6 +6,7 @@ scriptencoding utf-8
 "====================================
 call plug#begin('~/.vim/plugged')
 
+" スタート画面
 Plug 'mhinz/vim-startify'
 " -- Font
 Plug 'lambdalisue/nerdfont.vim'
@@ -19,6 +20,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'rickhowe/diffchar.vim'
 Plug 'Yggdroot/indentLine'
 " Plug 'preservim/vim-indent-guides'
+Plug 'frazrepo/vim-rainbow'
 " -- Window
 Plug 'simeji/winresizer'
 " -- Movement
@@ -88,7 +90,6 @@ set fenc=utf-8 " 文字コードをUFT-8に設定
 set list listchars=tab:▸\ ,eol:↲,extends:»,precedes:«,nbsp:% " 不可視文字の指定
 set guioptions+=a " yでコピーした時にクリップボードに入る
 set clipboard=unnamed,autoselect " ヤンクでクリップボードにコピー
-set ambiwidth=double " 全角文字専用の設定
 
 " -- Save
 set nobackup " バックアップファイルを作らない
@@ -260,6 +261,11 @@ nnoremap sou :source ~/.vimrc<Enter>
 " Yggdroot/indentLine
 "------------------------------------
 let g:indentLine_char_list = ['¦']
+
+"------------------------------------
+" frazrepo/vim-rainbow
+"------------------------------------
+let g:rainbow_active = 0
 
 "------------------------------------
 " itchyny/lightline.vim
