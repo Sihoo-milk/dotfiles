@@ -59,7 +59,9 @@ Plug 'tpope/vim-haml'
 " -- JavaScript
 " JavaScript syntax
 Plug 'othree/yajs.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 " EJS syntax
 Plug 'nikvdp/ejs-syntax'
 " JSON
