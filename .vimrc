@@ -69,6 +69,7 @@ Plug 'elzr/vim-json'
 " -- PHP
 Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'hesselbom/vim-hsftp'
+Plug 'oprogramador/vim-ftp'
 
 call plug#end()
 
@@ -352,7 +353,7 @@ let g:fern#renderer = "nerdfont" "アイコン表示
 "------------------------------------
 " junegunn/fzf.vim
 "------------------------------------
-nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>; :Files<CR>
 
 "------------------------------------
 " neoclide/coc.nvim
@@ -412,3 +413,16 @@ function! s:DetectEjs()
   endif
 endfunction
 autocmd BufNewFile,BufRead * call s:DetectEjs()
+
+"------------------------------------
+" oprogramador/vim-ftp
+"------------------------------------
+let g:ftp_conf = {
+\       'local_base_path'  : '/home/name/sample/',
+\       'local_backup_path' : '/home/name/undo/',
+\       'remote_base_path' : '/var/www/sample/',
+\       'user' : 'username',
+\       'pass' : 'password',
+\       'host' : '127.0.0.1',
+\       'silent' : 0
+\   }
