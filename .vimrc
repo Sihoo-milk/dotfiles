@@ -18,8 +18,8 @@ Plug 'arcticicestudio/nord-vim'
 " -- Appearance
 Plug 'itchyny/lightline.vim'
 Plug 'rickhowe/diffchar.vim'
-Plug 'Yggdroot/indentLine'
-" Plug 'preservim/vim-indent-guides'
+" Plug 'Yggdroot/indentLine'
+Plug 'preservim/vim-indent-guides'
 " -- Window
 Plug 'simeji/winresizer'
 " -- Movement
