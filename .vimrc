@@ -49,6 +49,7 @@ Plug 'tpope/vim-commentary'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'https://github.com/wolandark/vim-live-server.git'
+Plug 'markonm/traces.vim'
 " -- HTML
 Plug 'othree/html5.vim'
 Plug 'AndrewRadev/tagalong.vim'
