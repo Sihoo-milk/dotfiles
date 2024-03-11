@@ -16,6 +16,9 @@ vim.api.nvim_set_keymap('n', 'U', '<C-r>', { noremap = true })
 -- 全選択
 vim.api.nvim_set_keymap('n', '<Leader>a', 'ggVG', { noremap = true })
 
+-- カーソル位置から行末までをコピー
+vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true })
+
 -- カーソル行を表示行で移動
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
