@@ -1,15 +1,15 @@
 return {
-  -- add iceberg
-  {
-    "cocopon/iceberg.vim",
-    lazy = true,
-  },
+	-- add iceberg
+	-- {
+	--   "cocopon/iceberg.vim",
+	--   lazy = true,
+	-- },
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "iceberg",
-    },
-  },
+	-- Configure LazyVim to load gruvbox
+	-- {
+	--   "LazyVim/LazyVim",
+	--   opts = {
+	--     colorscheme = "iceberg",
+	--   },
+	-- },
 }
