@@ -19,8 +19,8 @@ vim.opt.incsearch = true -- インクリメンタルサーチを有効
 vim.opt.matchtime = 1 -- 入力された文字列がマッチするまでにかかる時間
 
 -- インデント
-vim.opt.shiftwidth = 4 -- シフト幅を4に設定する
-vim.opt.tabstop = 4 -- タブ幅を4に設定する
+vim.opt.shiftwidth = 2 -- シフト幅を4に設定する
+vim.opt.tabstop = 2 -- タブ幅を4に設定する
 vim.opt.expandtab = true -- タブ文字をスペースに置き換える
 vim.opt.autoindent = true -- 自動インデントを有効にする
 vim.opt.smartindent = true -- インデントをスマートに調整する
@@ -33,6 +33,6 @@ vim.opt.visualbell = true -- ビープ音を表示する代わりに画面をフ
 vim.opt.showmatch = true -- 対応する括弧をハイライト表示
 
 -- Syntax highlighting
-vim.opt.syntax = 'enable'
+vim.opt.syntax = "enable"
 vim.opt.termguicolors = true -- 24 ビットカラーを使用
 vim.opt.background = "dark" -- ダークカラーを使用する
