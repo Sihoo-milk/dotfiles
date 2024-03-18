@@ -42,3 +42,18 @@ vim.api.nvim_set_keymap("n", "sl", "<C-w>l", { noremap = true })
 -- Tab
 vim.api.nvim_set_keymap("n", "gh", "gT", { noremap = true })
 vim.api.nvim_set_keymap("n", "gl", "gt", { noremap = true })
+
+-- 上下左右のキーを <Nop> にマッピングする
+vim.api.nvim_set_keymap("", "<Up>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("", "<Down>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("", "<Left>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("", "<Right>", "<Nop>", { noremap = true })
+
+-- インサートモードでの上下左右のキーを <Nop> にマッピングする
+vim.api.nvim_set_keymap("i", "<Up>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<Down>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<Left>", "<Nop>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", { noremap = true })
+
+-- ノーマルモードでのsキーを <Nop> にマッピングする
+vim.api.nvim_set_keymap("n", "s", "<Nop>", { noremap = true })
