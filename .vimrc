@@ -414,16 +414,3 @@ function! s:DetectEjs()
   endif
 endfunction
 autocmd BufNewFile,BufRead * call s:DetectEjs()
-
-"------------------------------------
-" oprogramador/vim-ftp
-"------------------------------------
-let g:ftp_conf = {
-\       'local_base_path'  : '/home/name/sample/',
-\       'local_backup_path' : '/home/name/undo/',
-\       'remote_base_path' : '/var/www/sample/',
-\       'user' : 'username',
-\       'pass' : 'password',
-\       'host' : '127.0.0.1',
-\       'silent' : 0
-\   }
