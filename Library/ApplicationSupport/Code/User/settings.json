@@ -1,0 +1,292 @@
+// 既定の設定を上書きするには、このファイル内に設定を挿入します
+{
+  "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
+  "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
+  "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
+  "editor.minimap.enabled": false,
+  //"editor.lineNumbers": "relative",
+  "workbench.tree.indent": 15, // EXPLORERのインデント
+  "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
+
+  // ===================================
+  // Font
+  // ===================================
+  // "editor.fontFamily": "Myrica M, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'HackGen35 Console NF', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.6,
+
+  // ===================================
+  // Theme
+  // ===================================
+  "workbench.colorTheme": "Iceberg",
+  // SynthWave '84
+  // "vscode_custom_css.imports": [
+  //   "file:///Users/maenotomohiro/設定ファイル/theme/synthwave84.css"
+  //   //  Windowsの場合、file:///C:/Users/<ユーザーネーム>/synthwave84.css
+  // ],
+  // "vscode_custom_css.policy": true,
+
+  // ===================================
+  // Terminal
+  // ===================================
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルのShellをZshに変更
+  "terminal.integrated.fontFamily": "'HackGen35 Console NF'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.4,
+
+  // ===================================
+  // Format
+  // ===================================
+  "editor.tabSize": 2, // タブを押した時のスペースの数
+  "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "[svelte]": {
+  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
+  // },
+  //"[php]": {
+  //  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  //},
+  "editor.formatOnSave": true, // 保存時にフォーマット
+  "editor.formatOnPaste": true, // ペースト時にフォーマット
+  "editor.formatOnType": true, // タイプ時にフォーマット
+  "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
+  "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
+  "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
+  // "html.format.indentInnerHtml": true, // headとbodyをインデント
+  // "html.format.indentHandlebars": true, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
+  "html.format.extraLiners": "", // 指定タグの前に空行を追加する
+  "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
+  "html.format.wrapAttributes": "force-expand-multiline",
+  "html.format.unformatted": "meta, link, script, noscript",
+  "html.format.templating": true, // ejsのフォーマット設定
+  // "files.associations": {
+  //   "*.ejs ": "html"
+  // },
+
+  // ===================================
+  // Vim
+  // ===================================
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/Users/maenotomohiro/.vimrc",
+  "vim.statusBarColorControl": false, // statusbarの色のコントロールをする
+  "vim.leader": "<space>", // Map Leaderの設定
+  "vim.useSystemClipboard": true, // system clipboardと同期する
+  "vim.hlsearch": true,
+  "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
+  "vim.foldfix": true, // 折りたたまれている行をカーソルが通過するときに展開される
+  "vim.easymotion": true, // vim plugin有効化
+  //-- easy motion --
+  "vim.easymotionKeys": "sdfghjkl", // マーカーに使用される文字列
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<Leader>", ":"],
+      "commands": [{ "command": "workbench.action.showCommands" }]
+    }, // コマンドパレット
+    {
+      "before": ["<Leader>", ";"],
+      "commands": [{ "command": "workbench.action.quickOpen" }]
+    }, // ファイル検索
+    {
+      "before": ["<leader>", "e"],
+      "commands": [{ "command": "workbench.action.toggleSidebarVisibility" }]
+    },
+    // -- diffモードで比較元へ移動
+    {
+      "before": ["<C-w>", "h"],
+      "commands": [
+        {
+          "command": "workbench.action.compareEditor.focusSecondarySide"
+        }
+      ]
+    },
+    {
+      "before": ["<C-w>", "l"],
+      "commands": [
+        {
+          "command": "workbench.action.compareEditor.focusPrimarySide"
+        }
+      ]
+    }
+  ],
+  // -- zenhan
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.autoSwitchInputMethod.defaultIM": "0",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\zenhan\\bin64\\zenhan.exe 0",
+  "vim.autoSwitchInputMethod.switchIMCmd": "D:\\zenhan\\bin64\\zenhan.exe {im}",
+
+  // ===================================
+  // VSCode Neovim
+  // ===================================
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+  "workbench.list.automaticKeyboardNavigation": false, // ファイルツリー VSCode既存のキーバインドを無効にする
+  // ===================================
+  // emmet
+  // ===================================
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "ejs": "html"
+  },
+  // ===================================
+  // CSScomb
+  // ===================================
+  "csscomb.preset": "~/.vscode/extensions/mrmlnc.vscode-csscomb-5.3.2/csscomb.js/config/csscomb.json",
+  // ===================================
+  // Live Sass Compiler
+  // ===================================
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/dist/css"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": [
+    //対象外とするフォルダを指定
+    "**/node_modules/**",
+    ".vscode/**",
+    ".history/**"
+  ],
+  "liveSassCompile.settings.autoprefix": [
+    //ベンダープレフィックスの指定
+    "last 2 versions",
+    "ie >= 11",
+    "Android >= 4",
+    "ios_saf >= 8"
+  ],
+  // ===================================
+  // Easy Sass
+  // ===================================
+  "easysass.formats": [
+    {
+      "format": "expanded",
+      "extension": ".css"
+    }
+  ],
+  "easysass.compileAfterSave": true,
+  "easysass.excludeRegex": "^_+",
+  "easysass.targetDir": "css",
+  // ===================================
+  // Autoprefixer
+  // ===================================
+  "autoprefixer.options": {
+    // IE9以上かつ使用率5%以上のブラウザ
+    "browsers": ["last 4 versions", "ie >= 9", "> 5%"],
+    "grid": "autoplace"
+  },
+  // ===================================
+  // PHP Intelephense
+  // ===================================
+  "php.validate.enable": false,
+  "php.suggest.basic": false,
+  // PHP Intelephense
+  "intelephense.stubs": [
+    "apache",
+    "bcmath",
+    "bz2",
+    "calendar",
+    "com_dotnet",
+    "Core",
+    "ctype",
+    "curl",
+    "date",
+    "dba",
+    "dom",
+    "enchant",
+    "exif",
+    "FFI",
+    "fileinfo",
+    "filter",
+    "fpm",
+    "ftp",
+    "gd",
+    "gettext",
+    "gmp",
+    "hash",
+    "iconv",
+    "imap",
+    "intl",
+    "json",
+    "ldap",
+    "libxml",
+    "mbstring",
+    "meta",
+    "mysqli",
+    "oci8",
+    "odbc",
+    "openssl",
+    "pcntl",
+    "pcre",
+    "PDO",
+    "pdo_ibm",
+    "pdo_mysql",
+    "pdo_pgsql",
+    "pdo_sqlite",
+    "pgsql",
+    "Phar",
+    "posix",
+    "pspell",
+    "readline",
+    "Reflection",
+    "session",
+    "shmop",
+    "SimpleXML",
+    "snmp",
+    "soap",
+    "sockets",
+    "sodium",
+    "SPL",
+    "sqlite3",
+    "standard",
+    "superglobals",
+    "sysvmsg",
+    "sysvsem",
+    "sysvshm",
+    "tidy",
+    "tokenizer",
+    "xml",
+    "xmlreader",
+    "xmlrpc",
+    "xmlwriter",
+    "xsl",
+    "Zend OPcache",
+    "zip",
+    "zlib",
+    "wordpress"
+  ],
+  "intelephense.diagnostics.undefinedClassConstants": false,
+  "intelephense.diagnostics.undefinedConstants": false,
+  "intelephense.diagnostics.undefinedFunctions": false,
+  "intelephense.diagnostics.undefinedMethods": false,
+  "intelephense.diagnostics.undefinedTypes": false,
+  "intelephense.format.braces": "k&r",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.guides.indentation": true,
+  "security.workspace.trust.enabled": false,
+  "prettier.useEditorConfig": false,
+  "gitlens.graph.experimental.minimap.enabled": true,
+  "css.lint.validProperties": ["composes"],
+  "VSCodeNotion.accessToken": "v02%3Auser_token_or_cookies%3AkLYh50sl1KbOeReM2qX28LOgkWAPJWqTUrU6-q59_OjpqWy442yRLpyorQlbYCOo_9ijA6qyf5OM5p_AgVCXaQqyj4ewf1wnDi-T3u-77phN9lug_LHFVya-bKcCeF-ckCRF",
+  "workbench.iconTheme": "vscode-icons",
+  "diffEditor.experimental.showMoves": true,
+  "breadcrumbs.enabled": false,
+  "workbench.tree.renderIndentGuides": "always",
+  "diffEditor.renderSideBySide": false
+}
