@@ -1,15 +1,27 @@
 return {
 	-- add iceberg
-	-- {
-	--   "cocopon/iceberg.vim",
-	--   lazy = true,
-	-- },
+	{
+		"cocopon/iceberg.vim",
+		enabled = false,
+		lazy = true,
+		priority = 1000,
+		name = "iceberg",
+	},
 
-	-- Configure LazyVim to load gruvbox
-	-- {
-	--   "LazyVim/LazyVim",
-	--   opts = {
-	--     colorscheme = "iceberg",
-	--   },
-	-- },
+	-- add tokyonight
+	{
+		"folke/tokyonight.nvim",
+		lazy = true,
+		priority = 1000,
+		name = "tokyonight",
+		opts = { style = "moon" },
+	},
+
+	-- Configure LazyVim to load tokyonight
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "tokyonight",
+		},
+	},
 }

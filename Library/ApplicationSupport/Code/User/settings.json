@@ -42,8 +42,8 @@
   "editor.tabSize": 2, // タブを押した時のスペースの数
   "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[scss]": {
     // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
@@ -287,6 +287,5 @@
   "workbench.iconTheme": "vscode-icons",
   "diffEditor.experimental.showMoves": true,
   "breadcrumbs.enabled": false,
-  "workbench.tree.renderIndentGuides": "always",
-  "diffEditor.renderSideBySide": false
+  "workbench.tree.renderIndentGuides": "always"
 }
