@@ -1,3 +1,22 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
+
+-- This file is automatically loaded by lazyvim.config.init.
+
+-- local function augroup(name)
+-- 	return vim.api.nvim_create_augroup("lazyvim_" .. name, { clear = true })
+-- end
+--
+-- vim.api.nvim_command([[
+--   augroup Diff
+--     autocmd!
+--     autocmd ColorScheme * highlight DiffAdd ctermfg=NONE guifg=NONE
+--     autocmd ColorScheme * highlight DiffDelete ctermfg=NONE guifg=NONE
+--     autocmd ColorScheme * highlight DiffText ctermfg=NONE guifg=NONE
+--     autocmd ColorScheme * highlight DiffChange ctermfg=NONE guifg=NONE
+--   augroup END
+-- ]])
+--
+-- -- ファイルを読み込むときに自動的に上記のスクリプトが実行される
+-- vim.api.nvim_command("autocmd BufRead * lua ...") -- ファイルパスを指定してください
