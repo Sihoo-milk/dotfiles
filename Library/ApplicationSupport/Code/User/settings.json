@@ -52,6 +52,10 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[ejs]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.formatOnSave": true // 保存時にフォーマット
+  },
   // "[svelte]": {
   //   "editor.defaultFormatter": "esbenp.prettier-vscode"
   // },
