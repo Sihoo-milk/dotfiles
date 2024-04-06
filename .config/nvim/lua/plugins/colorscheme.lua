@@ -1,22 +1,19 @@
 return {
-	-- add iceberg
 	{
-		"cocopon/iceberg.vim",
+		"oahlen/iceberg.nvim",
 		lazy = true,
 		priority = 1000,
 		name = "iceberg",
 	},
 
-	-- add tokyonight
 	{
 		"folke/tokyonight.nvim",
 		lazy = true,
 		priority = 1000,
 		name = "tokyonight",
-		opts = { style = "moon" },
+		opts = { style = "night" },
 	},
 
-	-- Configure LazyVim to load tokyonight
 	{
 		"LazyVim/LazyVim",
 		opts = {
