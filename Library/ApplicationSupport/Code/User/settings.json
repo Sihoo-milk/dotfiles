@@ -4,7 +4,7 @@
   "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
   "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
   "editor.minimap.enabled": false,
-  //"editor.lineNumbers": "relative",
+  "editor.lineNumbers": "relative",
   "workbench.tree.indent": 15, // EXPLORERのインデント
   "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
 
@@ -43,11 +43,16 @@
    * HTML
    */
   "[html]": {
-    // "editor.defaultFormatter": "vscode.html-language-features"
+    /** Formatter */
+    // "editor.defaultFormatter": "vscode.html-language-features",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    /** Auto format */
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
+
+    /** Format options */
     "html.format.indentInnerHtml": false, // headとbodyをインデント
     "html.format.indentHandlebars": false, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
     "html.format.extraLiners": "", // 指定タグの前に空行を追加する
@@ -60,15 +65,24 @@
    * Sass
    */
   "[scss]": {
-    // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    /** Formatter */
+    // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    /** Auto format */
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
   /**
    * JavaScript
    */
   "[javascript]": {
+    /** Formatter */
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    /** Auto format */
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
@@ -78,27 +92,43 @@
    * EJS
    */
   "[ejs]": {
+    /** Formatter */
     "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.formatOnSave": true // 保存時にフォーマット
+
+    /** Auto format */
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
   },
   "html.format.templating": true, // ejsのフォーマット設定
-  // "files.associations": {
-  //   "*.ejs ": "html"
-  // },
+  "files.associations": {
+    // "*.ejs ": "html"
+  },
 
   /**
    * Svelte
    */
   "[svelte]": {
+    /** Formatter */
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+    /** Auto format */
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
   /**
    * PHP
    */
   "[php]": {
-    "editor.formatOnSave": false, // 保存時にフォーマット
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    /** Formatter */
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
+
+    /** Auto format */
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
   // ===================================
@@ -160,6 +190,7 @@
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
   "workbench.list.automaticKeyboardNavigation": false, // ファイルツリー VSCode既存のキーバインドを無効にする
+
   // ===================================
   // emmet
   // ===================================
@@ -170,10 +201,12 @@
     "javascript": "javascriptreact",
     "ejs": "html"
   },
+
   // ===================================
   // CSScomb
   // ===================================
   "csscomb.preset": "~/.vscode/extensions/mrmlnc.vscode-csscomb-5.3.2/csscomb.js/config/csscomb.json",
+
   // ===================================
   // Live Sass Compiler
   // ===================================
@@ -197,6 +230,7 @@
     "Android >= 4",
     "ios_saf >= 8"
   ],
+
   // ===================================
   // Easy Sass
   // ===================================
@@ -209,6 +243,7 @@
   "easysass.compileAfterSave": true,
   "easysass.excludeRegex": "^_+",
   "easysass.targetDir": "css",
+
   // ===================================
   // Autoprefixer
   // ===================================
@@ -217,6 +252,7 @@
     "browsers": ["last 4 versions", "ie >= 9", "> 5%"],
     "grid": "autoplace"
   },
+
   // ===================================
   // PHP Intelephense
   // ===================================
@@ -303,6 +339,7 @@
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.format.braces": "k&r",
+
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.guides.indentation": true,
   "security.workspace.trust.enabled": false,
