@@ -1,8 +1,8 @@
 // 既定の設定を上書きするには、このファイル内に設定を挿入します
 {
+  "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
   "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
   "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
-  "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
   "editor.minimap.enabled": false,
   //"editor.lineNumbers": "relative",
   "workbench.tree.indent": 15, // EXPLORERのインデント
@@ -20,12 +20,6 @@
   // Theme
   // ===================================
   "workbench.colorTheme": "Iceberg",
-  // SynthWave '84
-  // "vscode_custom_css.imports": [
-  //   "file:///Users/maenotomohiro/設定ファイル/theme/synthwave84.css"
-  //   //  Windowsの場合、file:///C:/Users/<ユーザーネーム>/synthwave84.css
-  // ],
-  // "vscode_custom_css.policy": true,
 
   // ===================================
   // Terminal
@@ -41,43 +35,71 @@
   // ===================================
   "editor.tabSize": 2, // タブを押した時のスペースの数
   "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
+  "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
+  "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
+  "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
+
+  /**
+   * HTML
+   */
   "[html]": {
     // "editor.defaultFormatter": "vscode.html-language-features"
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
+    "html.format.indentInnerHtml": false, // headとbodyをインデント
+    "html.format.indentHandlebars": false, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
+    "html.format.extraLiners": "", // 指定タグの前に空行を追加する
+    "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
+    "html.format.wrapAttributes": "force-expand-multiline",
+    // "html.format.unformatted": "meta, link, script, noscript",
   },
+
+  /**
+   * Sass
+   */
   "[scss]": {
     // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
+  /**
+   * JavaScript
+   */
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true, // 保存時にフォーマット
+    "editor.formatOnPaste": true, // ペースト時にフォーマット
+    "editor.formatOnType": true, // タイプ時にフォーマット
+  },
+
+  /**
+   * EJS
+   */
   "[ejs]": {
     "editor.defaultFormatter": "vscode.html-language-features",
     "editor.formatOnSave": true // 保存時にフォーマット
   },
-  // "[svelte]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  //"[php]": {
-  //  "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  //},
-  "editor.formatOnSave": true, // 保存時にフォーマット
-  "editor.formatOnPaste": true, // ペースト時にフォーマット
-  "editor.formatOnType": true, // タイプ時にフォーマット
-  "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
-  "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
-  "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
-  // "html.format.indentInnerHtml": true, // headとbodyをインデント
-  // "html.format.indentHandlebars": true, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
-  "html.format.extraLiners": "", // 指定タグの前に空行を追加する
-  "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
-  "html.format.wrapAttributes": "force-expand-multiline",
-  "html.format.unformatted": "meta, link, script, noscript",
   "html.format.templating": true, // ejsのフォーマット設定
   // "files.associations": {
   //   "*.ejs ": "html"
   // },
+
+  /**
+   * Svelte
+   */
+  "[svelte]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  /**
+   * PHP
+   */
+  "[php]": {
+    "editor.formatOnSave": false, // 保存時にフォーマット
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
 
   // ===================================
   // Vim
@@ -287,7 +309,6 @@
   "prettier.useEditorConfig": false,
   "gitlens.graph.experimental.minimap.enabled": true,
   "css.lint.validProperties": ["composes"],
-  "VSCodeNotion.accessToken": "v02%3Auser_token_or_cookies%3AkLYh50sl1KbOeReM2qX28LOgkWAPJWqTUrU6-q59_OjpqWy442yRLpyorQlbYCOo_9ijA6qyf5OM5p_AgVCXaQqyj4ewf1wnDi-T3u-77phN9lug_LHFVya-bKcCeF-ckCRF",
   "workbench.iconTheme": "vscode-icons",
   "diffEditor.experimental.showMoves": true,
   "breadcrumbs.enabled": false,
