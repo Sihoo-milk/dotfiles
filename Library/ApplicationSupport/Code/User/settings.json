@@ -1,4 +1,3 @@
-// 既定の設定を上書きするには、このファイル内に設定を挿入します
 {
   "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
   "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
@@ -39,93 +38,87 @@
   "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
   "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
 
-  /**
-   * HTML
-   */
+  // HTML
+  // -----------------------------------
   "[html]": {
-    /** Formatter */
+    // -- Formatter
     // "editor.defaultFormatter": "vscode.html-language-features",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
-
-    /** Format options */
-    "html.format.indentInnerHtml": false, // headとbodyをインデント
-    "html.format.indentHandlebars": false, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
-    "html.format.extraLiners": "", // 指定タグの前に空行を追加する
-    "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
-    "html.format.wrapAttributes": "force-expand-multiline",
-    // "html.format.unformatted": "meta, link, script, noscript",
   },
 
-  /**
-   * Sass
-   */
+  // -- Format options
+  "html.format.indentInnerHtml": false, // headとbodyをインデント
+  "html.format.indentHandlebars": false, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
+  "html.format.extraLiners": "", // 指定タグの前に空行を追加する
+  "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
+  "html.format.wrapAttributes": "force-expand-multiline",
+  // "html.format.unformatted": "meta, link, script, noscript",
+
+  // Sass
+  // -----------------------------------
   "[scss]": {
-    /** Formatter */
+    // -- Formatter
     // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
-  /**
-   * JavaScript
-   */
+  // JavaScript
+  // -----------------------------------
   "[javascript]": {
-    /** Formatter */
+    // -- Formatter
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
-  /**
-   * EJS
-   */
+  // EJS
+  // -----------------------------------
   "[ejs]": {
-    /** Formatter */
+    // -- Formatter
     "editor.defaultFormatter": "vscode.html-language-features",
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
   },
   "html.format.templating": true, // ejsのフォーマット設定
   "files.associations": {
-    // "*.ejs ": "html"
+    "*.ejs ": "html"
   },
 
-  /**
-   * Svelte
-   */
+  // Svelte
+  // -----------------------------------
   "[svelte]": {
-    /** Formatter */
+    // -- Formatter
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
   },
 
-  /**
-   * PHP
-   */
+  // PHP
+  // -----------------------------------
   "[php]": {
-    /** Formatter */
+    // -- Formatter
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
 
-    /** Auto format */
+    // -- Auto format
     "editor.formatOnSave": true, // 保存時にフォーマット
     "editor.formatOnPaste": true, // ペースト時にフォーマット
     "editor.formatOnType": true, // タイプ時にフォーマット
@@ -142,9 +135,11 @@
   "vim.hlsearch": true,
   "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
   "vim.foldfix": true, // 折りたたまれている行をカーソルが通過するときに展開される
+
+  // -- easy motion
   "vim.easymotion": true, // vim plugin有効化
-  //-- easy motion --
   "vim.easymotionKeys": "sdfghjkl", // マーカーに使用される文字列
+
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<Leader>", ":"],
@@ -154,10 +149,7 @@
       "before": ["<Leader>", ";"],
       "commands": [{ "command": "workbench.action.quickOpen" }]
     }, // ファイル検索
-    {
-      "before": ["<leader>", "e"],
-      "commands": [{ "command": "workbench.action.toggleSidebarVisibility" }]
-    },
+
     // -- diffモードで比較元へ移動
     {
       "before": ["<C-w>", "h"],
@@ -176,6 +168,7 @@
       ]
     }
   ],
+
   // -- zenhan
   "vim.autoSwitchInputMethod.enable": true,
   "vim.autoSwitchInputMethod.defaultIM": "0",
