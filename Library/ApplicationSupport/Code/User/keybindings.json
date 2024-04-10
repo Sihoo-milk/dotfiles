@@ -1,6 +1,7 @@
-// 既定値を上書きするには、このファイル内にキー バインドを挿入します
 [
-  // ターミナルとエディター間の移動
+  // ===================================
+  // Switch focus
+  // ===================================
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusSideBar",
@@ -22,7 +23,9 @@
     "when": "terminalFocus"
   },
 
-  // コマンドパレット上での移動
+  // ===================================
+  // Moving on the command palette
+  // ===================================
   {
     "key": "ctrl+j",
     "command": "workbench.action.quickOpenSelectNext",
@@ -33,7 +36,10 @@
     "command": "workbench.action.quickOpenSelectPrevious",
     "when": "inQuickOpen"
   },
-  // 補完リスト上での移動
+
+  // ===================================
+  // Moving on the autocomplete list
+  // ===================================
   {
     "key": "ctrl+j",
     "command": "selectNextSuggestion",
@@ -44,6 +50,10 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
+
+  // ===================================
+  // Explorer
+  // ===================================
   {
     "key": "shift+n",
     "command": "explorer.newFile",
@@ -63,5 +73,9 @@
     "key": "shift+d",
     "command": "deleteFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }, // 削除
+  },
+  {
+    "key": "shift+cmd+g shift+cmd+g",
+    "command": "git-graph.view"
+  }
 ]
