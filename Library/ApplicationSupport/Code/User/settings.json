@@ -4,14 +4,11 @@
   "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
-  "workbench.tree.indent": 15, // EXPLORERのインデント
-  "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
 
   // ===================================
   // Font
   // ===================================
-  // "editor.fontFamily": "Myrica M, Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontFamily": "'HackGen35 Console NF', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontFamily": "'HackGen35 Console NF'",
   "editor.fontSize": 16,
   "editor.lineHeight": 1.6,
 
@@ -30,10 +27,23 @@
   "terminal.integrated.lineHeight": 1.4,
 
   // ===================================
+  // Activity Bar
+  // ===================================
+  "workbench.activityBar.location": "hidden",
+
+  // ===================================
+  // Explorer
+  // ===================================
+  "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
+  "workbench.tree.indent": 15, // EXPLORERのインデント
+
+  // ===================================
   // Format
   // ===================================
   "editor.tabSize": 2, // タブを押した時のスペースの数
   "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
+  "editor.formatOnPaste": true, // ペースト時にフォーマット
+  "editor.formatOnType": true, // タイプ時にフォーマット
   "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
   "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
   "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
@@ -46,9 +56,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
   },
 
   // -- Format options
@@ -59,6 +67,17 @@
   "html.format.wrapAttributes": "force-expand-multiline",
   // "html.format.unformatted": "meta, link, script, noscript",
 
+  // CSS
+  // -----------------------------------
+  "[css]": {
+    // -- Formatter
+    // "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // -- Auto format
+    "editor.formatOnSave": false,
+  },
+
   // Sass
   // -----------------------------------
   "[scss]": {
@@ -67,9 +86,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
   },
 
   // JavaScript
@@ -79,9 +96,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
   },
 
   // EJS
@@ -91,9 +106,7 @@
     "editor.defaultFormatter": "vscode.html-language-features",
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
   },
   "html.format.templating": true, // ejsのフォーマット設定
   "files.associations": {
@@ -107,9 +120,7 @@
     // "editor.defaultFormatter": "esbenp.prettier-vscode"
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
   },
 
   // PHP
@@ -119,9 +130,18 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
 
     // -- Auto format
-    "editor.formatOnSave": true, // 保存時にフォーマット
-    "editor.formatOnPaste": true, // ペースト時にフォーマット
-    "editor.formatOnType": true, // タイプ時にフォーマット
+    "editor.formatOnSave": false,
+  },
+
+  // ===================================
+  // Emmet
+  // ===================================
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "ejs": "html"
   },
 
   // ===================================
@@ -183,17 +203,6 @@
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
   "workbench.list.automaticKeyboardNavigation": false, // ファイルツリー VSCode既存のキーバインドを無効にする
-
-  // ===================================
-  // emmet
-  // ===================================
-  "emmet.variables": {
-    "lang": "ja"
-  },
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact",
-    "ejs": "html"
-  },
 
   // ===================================
   // CSScomb
@@ -334,13 +343,13 @@
   "intelephense.format.braces": "k&r",
 
   "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.experimental.showMoves": true,
   "editor.guides.indentation": true,
   "security.workspace.trust.enabled": false,
   "prettier.useEditorConfig": false,
   "gitlens.graph.experimental.minimap.enabled": true,
   "css.lint.validProperties": ["composes"],
   "workbench.iconTheme": "vscode-icons",
-  "diffEditor.experimental.showMoves": true,
   "breadcrumbs.enabled": false,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
 }
