@@ -2,6 +2,10 @@
   "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
   "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
   "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
+  "breadcrumbs.enabled": false,
+
+  "security.workspace.trust.enabled": false,
+
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
 
@@ -36,6 +40,8 @@
   // ===================================
   "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
   "workbench.tree.indent": 15, // EXPLORERのインデント
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.iconTheme": "vscode-icons",
 
   // ===================================
   // Format
@@ -65,7 +71,7 @@
   "html.format.extraLiners": "", // 指定タグの前に空行を追加する
   "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
   "html.format.wrapAttributes": "force-expand-multiline",
-  // "html.format.unformatted": "meta, link, script, noscript",
+  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript",
 
   // CSS
   // -----------------------------------
@@ -77,6 +83,8 @@
     // -- Auto format
     "editor.formatOnSave": false,
   },
+
+  "css.lint.validProperties": ["composes"],
 
   // Sass
   // -----------------------------------
@@ -97,6 +105,16 @@
 
     // -- Auto format
     "editor.formatOnSave": false,
+  },
+
+  // JSON
+  // -----------------------------------
+  "[json]": {
+    // -- Formatter
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+    // -- Auto format
+    "editor.formatOnSave": true,
   },
 
   // EJS
@@ -154,7 +172,7 @@
   "vim.useSystemClipboard": true, // system clipboardと同期する
   "vim.hlsearch": true,
   "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
-  "vim.foldfix": true, // 折りたたまれている行をカーソルが通過するときに展開される
+  "vim.foldfix": true, // 折りたたまれている行を乗り越える
 
   // -- easy motion
   "vim.easymotion": true, // vim plugin有効化
@@ -170,7 +188,7 @@
       "commands": [{ "command": "workbench.action.quickOpen" }]
     }, // ファイル検索
 
-    // -- diffモードで比較元へ移動
+    // -- diffモードでフォーカスをスイッチ
     {
       "before": ["<C-w>", "h"],
       "commands": [
@@ -228,32 +246,9 @@
   "liveSassCompile.settings.autoprefix": [
     //ベンダープレフィックスの指定
     "last 2 versions",
-    "ie >= 11",
     "Android >= 4",
     "ios_saf >= 8"
   ],
-
-  // ===================================
-  // Easy Sass
-  // ===================================
-  "easysass.formats": [
-    {
-      "format": "expanded",
-      "extension": ".css"
-    }
-  ],
-  "easysass.compileAfterSave": true,
-  "easysass.excludeRegex": "^_+",
-  "easysass.targetDir": "css",
-
-  // ===================================
-  // Autoprefixer
-  // ===================================
-  "autoprefixer.options": {
-    // IE9以上かつ使用率5%以上のブラウザ
-    "browsers": ["last 4 versions", "ie >= 9", "> 5%"],
-    "grid": "autoplace"
-  },
 
   // ===================================
   // PHP Intelephense
@@ -344,12 +339,6 @@
 
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
-  "editor.guides.indentation": true,
-  "security.workspace.trust.enabled": false,
   "prettier.useEditorConfig": false,
   "gitlens.graph.experimental.minimap.enabled": true,
-  "css.lint.validProperties": ["composes"],
-  "workbench.iconTheme": "vscode-icons",
-  "breadcrumbs.enabled": false,
-  "workbench.tree.renderIndentGuides": "always",
 }
