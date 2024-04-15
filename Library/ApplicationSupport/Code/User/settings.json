@@ -52,7 +52,7 @@
   "editor.formatOnType": true, // タイプ時にフォーマット
   "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
   "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
-  "files.trimTrailingWhitespace": true, //ファイルの保存時に末尾の空白をトリミング
+  "files.trimTrailingWhitespace": true, // ファイルの保存時に末尾の空白をトリミング
 
   // HTML
   // -----------------------------------
@@ -71,7 +71,7 @@
   "html.format.extraLiners": "", // 指定タグの前に空行を追加する
   "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
   "html.format.wrapAttributes": "force-expand-multiline",
-  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript",
+  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // 対象外とするタグ
 
   // CSS
   // -----------------------------------
@@ -149,6 +149,13 @@
 
     // -- Auto format
     "editor.formatOnSave": false,
+  },
+
+  // Markdown
+  // -----------------------------------
+  "[md]": {
+    // -- Auto format
+    "editor.formatOnSave": true,
   },
 
   // ===================================
@@ -238,13 +245,13 @@
     }
   ],
   "liveSassCompile.settings.excludeList": [
-    //対象外とするフォルダを指定
+    // 対象外とするフォルダを指定
     "**/node_modules/**",
     ".vscode/**",
     ".history/**"
   ],
   "liveSassCompile.settings.autoprefix": [
-    //ベンダープレフィックスの指定
+    // ベンダープレフィックスの指定
     "last 2 versions",
     "Android >= 4",
     "ios_saf >= 8"
