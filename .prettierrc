@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
   "trailingComma": "none",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "htmlWhitespaceSensitivity": "strict"
 }
