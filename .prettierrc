@@ -2,5 +2,20 @@
   "singleQuote": true,
   "trailingComma": "none",
   "singleAttributePerLine": true,
-  "htmlWhitespaceSensitivity": "strict"
+  "htmlWhitespaceSensitivity": "strict",
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "doctype": "<!DOCTYPE html>"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss",
+        "singleQuote": false
+      }
+    }
+  ]
 }
