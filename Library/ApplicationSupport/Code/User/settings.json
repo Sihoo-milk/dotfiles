@@ -1,20 +1,7 @@
 {
   "files.encoding": "utf8", // ファイルの読み取り/書き込みで使用する規定の文字セット エンコーディング
   "workbench.startupEditor": "none", // 起動時に表示するエディター（none：エディターを開かない）
-  "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
-  "breadcrumbs.enabled": false,
-
   "security.workspace.trust.enabled": false,
-
-  "editor.minimap.enabled": false,
-  "editor.lineNumbers": "relative",
-
-  // ===================================
-  // Font
-  // ===================================
-  "editor.fontFamily": "'HackGen35 Console NF'",
-  "editor.fontSize": 16,
-  "editor.lineHeight": 1.6,
 
   // ===================================
   // Theme
@@ -22,13 +9,14 @@
   "workbench.colorTheme": "Iceberg",
 
   // ===================================
-  // Terminal
+  // Title Bar
   // ===================================
-  "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルのShellをZshに変更
-  "terminal.integrated.fontFamily": "'HackGen35 Console NF'",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.lineHeight": 1.4,
+  "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
+
+  // ===================================
+  // Command Center
+  // ===================================
+  "window.commandCenter": false,
 
   // ===================================
   // Activity Bar
@@ -44,6 +32,36 @@
   "workbench.iconTheme": "vscode-icons",
 
   // ===================================
+  // Editor
+  // ===================================
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+
+  // -- Font
+  "editor.fontFamily": "'HackGen35 Console NF'",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.6,
+
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.experimental.showMoves": true,
+
+  // ===================================
+  // Terminal
+  // ===================================
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルのShellをZshに変更
+
+  // -- Font
+  "terminal.integrated.fontFamily": "'HackGen35 Console NF'",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.4,
+
+  // ===================================
+  // Breadcrumbs
+  // ===================================
+  "breadcrumbs.enabled": false,
+
+  // ===================================
   // Format
   // ===================================
   "editor.tabSize": 2, // タブを押した時のスペースの数
@@ -53,6 +71,7 @@
   "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
   "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
   "files.trimTrailingWhitespace": true, // ファイルの保存時に末尾の空白をトリミング
+  "prettier.useEditorConfig": false,
 
   // HTML
   // -----------------------------------
@@ -262,7 +281,7 @@
   // ===================================
   "php.validate.enable": false,
   "php.suggest.basic": false,
-  // PHP Intelephense
+
   "intelephense.stubs": [
     "apache",
     "bcmath",
@@ -343,9 +362,4 @@
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.format.braces": "k&r",
-
-  "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.experimental.showMoves": true,
-  "prettier.useEditorConfig": false,
-  "gitlens.graph.experimental.minimap.enabled": true,
 }
