@@ -181,7 +181,7 @@
   "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
   "vim.foldfix": true, // 折りたたまれている行を乗り越える
 
-  // -- easy motion
+  // -- EasyMotion
   "vim.easymotion": true, // vim plugin有効化
   "vim.easymotionKeys": "sdfghjkl", // マーカーに使用される文字列
 
