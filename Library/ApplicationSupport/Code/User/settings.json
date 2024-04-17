@@ -27,7 +27,7 @@
   // Explorer
   // ===================================
   "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
-  "workbench.tree.indent": 15, // EXPLORERのインデント
+  "workbench.tree.indent": 15, // Explorerのインデント
   "workbench.tree.renderIndentGuides": "always",
   "workbench.iconTheme": "vscode-icons",
 
@@ -90,7 +90,7 @@
   "html.format.extraLiners": "", // 指定タグの前に空行を追加する
   "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
   "html.format.wrapAttributes": "force-expand-multiline",
-  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // 対象外とするタグ
+  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // フォーマット対象外とするタグ
 
   // CSS
   // -----------------------------------
@@ -145,7 +145,7 @@
     // -- Auto format
     "editor.formatOnSave": false,
   },
-  "html.format.templating": true, // ejsのフォーマット設定
+  "html.format.templating": true, // EJSのフォーマット設定
   "files.associations": {
     "*.ejs ": "html"
   },
@@ -214,7 +214,7 @@
       "commands": [{ "command": "workbench.action.quickOpen" }]
     }, // ファイル検索
 
-    // -- diffモードでフォーカスをスイッチ
+    // -- diffモード時のフォーカススイッチ
     {
       "before": ["<C-w>", "h"],
       "commands": [
