@@ -4,36 +4,33 @@
   "security.workspace.trust.enabled": false,
 
   // ===================================
-  // Theme
+  // UI
   // ===================================
+  // Theme
+  // -----------------------------------
   "workbench.colorTheme": "Iceberg",
 
-  // ===================================
   // Title Bar
-  // ===================================
+  // -----------------------------------
   "window.title": "${activeEditorLong}", // タイトルバーにパスを表示
 
-  // ===================================
   // Command Center
-  // ===================================
+  // -----------------------------------
   "window.commandCenter": false,
 
-  // ===================================
   // Activity Bar
-  // ===================================
+  // -----------------------------------
   "workbench.activityBar.location": "hidden",
 
-  // ===================================
-  // Explorer
-  // ===================================
+  // Sidebars
+  // -----------------------------------
   "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
   "workbench.tree.indent": 15, // Explorerのインデント
   "workbench.tree.renderIndentGuides": "always",
   "workbench.iconTheme": "vscode-icons",
 
-  // ===================================
   // Editor
-  // ===================================
+  // -----------------------------------
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
 
@@ -42,12 +39,15 @@
   "editor.fontSize": 16,
   "editor.lineHeight": 1.6,
 
+  // -- Breadcrumbs
+  "breadcrumbs.enabled": false,
+
+  // -- Diff
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
 
-  // ===================================
-  // Terminal
-  // ===================================
+  // Panel
+  // -----------------------------------
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルのShellをZshに変更
 
@@ -55,11 +55,6 @@
   "terminal.integrated.fontFamily": "'HackGen35 Console NF'",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1.4,
-
-  // ===================================
-  // Breadcrumbs
-  // ===================================
-  "breadcrumbs.enabled": false,
 
   // ===================================
   // Format
@@ -172,7 +167,7 @@
 
   // Markdown
   // -----------------------------------
-  "[md]": {
+  "[markdown]": {
     // -- Auto format
     "editor.formatOnSave": true,
   },
@@ -188,9 +183,13 @@
     "ejs": "html"
   },
 
+
   // ===================================
+  // Plugins
+  // ===================================
+
   // Vim
-  // ===================================
+  // -----------------------------------
   "vim.vimrc.enable": true,
   "vim.vimrc.path": "/Users/maenotomohiro/.vimrc",
   "vim.statusBarColorControl": false, // statusbarの色のコントロールをする
@@ -213,6 +212,14 @@
       "before": ["<Leader>", ";"],
       "commands": [{ "command": "workbench.action.quickOpen" }]
     }, // ファイル検索
+    {
+      "before": ["<Leader>", "e"],
+      "commands": [
+        {
+          "command": "workbench.view.explorer"
+        }
+      ]
+    },
 
     // -- diffモード時のフォーカススイッチ
     {
@@ -239,23 +246,12 @@
   "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\zenhan\\bin64\\zenhan.exe 0",
   "vim.autoSwitchInputMethod.switchIMCmd": "D:\\zenhan\\bin64\\zenhan.exe {im}",
 
-  // ===================================
-  // VSCode Neovim
-  // ===================================
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-  "workbench.list.automaticKeyboardNavigation": false, // ファイルツリー VSCode既存のキーバインドを無効にする
-
-  // ===================================
   // CSScomb
-  // ===================================
+  // -----------------------------------
   "csscomb.preset": "~/.vscode/extensions/mrmlnc.vscode-csscomb-5.3.2/csscomb.js/config/csscomb.json",
 
-  // ===================================
   // Live Sass Compiler
-  // ===================================
+  // -----------------------------------
   "liveSassCompile.settings.formats": [
     {
       "format": "expanded",
@@ -264,21 +260,20 @@
     }
   ],
   "liveSassCompile.settings.excludeList": [
-    // 対象外とするフォルダを指定
+    // -- 対象外とするフォルダを指定
     "**/node_modules/**",
     ".vscode/**",
     ".history/**"
   ],
   "liveSassCompile.settings.autoprefix": [
-    // ベンダープレフィックスの指定
+    // -- ベンダープレフィックスの指定
     "last 2 versions",
     "Android >= 4",
     "ios_saf >= 8"
   ],
 
-  // ===================================
   // PHP Intelephense
-  // ===================================
+  // -----------------------------------
   "php.validate.enable": false,
   "php.suggest.basic": false,
 
