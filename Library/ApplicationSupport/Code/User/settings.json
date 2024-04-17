@@ -183,7 +183,6 @@
     "ejs": "html"
   },
 
-
   // ===================================
   // Plugins
   // ===================================
@@ -212,14 +211,6 @@
       "before": ["<Leader>", ";"],
       "commands": [{ "command": "workbench.action.quickOpen" }]
     }, // ファイル検索
-    {
-      "before": ["<Leader>", "e"],
-      "commands": [
-        {
-          "command": "workbench.view.explorer"
-        }
-      ]
-    },
 
     // -- diffモード時のフォーカススイッチ
     {
