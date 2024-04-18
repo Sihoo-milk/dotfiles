@@ -6,6 +6,7 @@
   // ===================================
   // UI
   // ===================================
+
   // Theme
   // -----------------------------------
   "workbench.colorTheme": "Iceberg",
@@ -20,7 +21,7 @@
 
   // Activity Bar
   // -----------------------------------
-  "workbench.activityBar.location": "hidden",
+  // "workbench.activityBar.location": "hidden",
 
   // Sidebars
   // -----------------------------------
@@ -85,7 +86,7 @@
   "html.format.extraLiners": "", // 指定タグの前に空行を追加する
   "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
   "html.format.wrapAttributes": "force-expand-multiline",
-  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // フォーマット対象外とするタグ
+  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // フォーマット適用外タグ
 
   // CSS
   // -----------------------------------
@@ -237,9 +238,8 @@
   "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\zenhan\\bin64\\zenhan.exe 0",
   "vim.autoSwitchInputMethod.switchIMCmd": "D:\\zenhan\\bin64\\zenhan.exe {im}",
 
-  // CSScomb
+  // Live Server
   // -----------------------------------
-  "csscomb.preset": "~/.vscode/extensions/mrmlnc.vscode-csscomb-5.3.2/csscomb.js/config/csscomb.json",
 
   // Live Sass Compiler
   // -----------------------------------
