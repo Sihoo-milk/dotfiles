@@ -73,9 +73,17 @@
     "key": "shift+d",
     "command": "deleteFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  },
+  }, // 削除
+
+  // ===================================
+  // Git Graph
+  // ===================================
   {
     "key": "shift+cmd+g shift+cmd+g",
     "command": "git-graph.view"
+  },
+  {
+    "key": "shift+cmd+g shift+cmd+f",
+    "command": "git-graph.fetch"
   }
 ]
