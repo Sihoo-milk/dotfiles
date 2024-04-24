@@ -137,9 +137,6 @@
   "[ejs]": {
     // -- Formatter
     "editor.defaultFormatter": "vscode.html-language-features",
-
-    // -- Auto format
-    "editor.formatOnSave": false
   },
   "html.format.templating": true, // EJSのフォーマット設定
   "files.associations": {
