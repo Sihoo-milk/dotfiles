@@ -346,4 +346,7 @@
   "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.format.braces": "k&r",
   "diffEditor.renderSideBySide": false
+
+  // Markdown
+  // -----------------------------------
 }
