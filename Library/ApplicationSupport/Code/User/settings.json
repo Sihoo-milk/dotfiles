@@ -77,7 +77,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     // -- Auto format
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
 
   // -- Format options
@@ -136,7 +136,8 @@
   // -----------------------------------
   "[ejs]": {
     // -- Formatter
-    "editor.defaultFormatter": "vscode.html-language-features",
+    // "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "html.format.templating": true, // EJSのフォーマット設定
   "files.associations": {
@@ -344,8 +345,7 @@
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.format.braces": "k&r",
-  "diffEditor.renderSideBySide": false
+  "intelephense.format.braces": "k&r"
 
   // Markdown
   // -----------------------------------
