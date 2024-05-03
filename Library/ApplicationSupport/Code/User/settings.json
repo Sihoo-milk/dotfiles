@@ -34,6 +34,7 @@
   // -----------------------------------
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "boundary",
 
   // -- Font
   "editor.fontFamily": "'HackGen35 Console NF'",
@@ -345,7 +346,7 @@
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.format.braces": "k&r"
+  "intelephense.format.braces": "k&r",
 
   // Markdown
   // -----------------------------------
