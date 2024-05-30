@@ -137,8 +137,8 @@
   // -----------------------------------
   "[ejs]": {
     // -- Formatter
-    // "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "vscode.html-language-features",
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "html.format.templating": true, // EJSのフォーマット設定
   "files.associations": {
