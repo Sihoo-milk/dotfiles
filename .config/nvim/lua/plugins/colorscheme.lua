@@ -11,13 +11,13 @@ return {
 		lazy = true,
 		priority = 1000,
 		name = "tokyonight",
-		opts = { style = "night" },
+		opts = { style = "moon" },
 	},
 
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "iceberg",
+			colorscheme = "tokyonight",
 		},
 	},
 }
