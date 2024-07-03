@@ -35,6 +35,7 @@
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
   "editor.renderWhitespace": "boundary",
+  "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
 
   // -- Font
   "editor.fontFamily": "'HackGen35 Console NF'",
@@ -45,6 +46,7 @@
   "breadcrumbs.enabled": false,
 
   // -- Diff
+  "diffEditor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
 
@@ -62,7 +64,6 @@
   // Format
   // ===================================
   "editor.tabSize": 2, // タブを押した時のスペースの数
-  "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
   "editor.formatOnPaste": true, // ペースト時にフォーマット
   "editor.formatOnType": true, // タイプ時にフォーマット
   "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
@@ -110,7 +111,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
 
     // -- Auto format
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
 
   // JavaScript
