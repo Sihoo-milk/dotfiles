@@ -24,7 +24,7 @@ return {
 				"trouble",
 			},
 			callback = function()
-				vim.b.miniindentscope_disable = false
+				vim.b.miniindentscope_disable = true
 			end,
 		})
 	end,

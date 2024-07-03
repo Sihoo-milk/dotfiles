@@ -29,6 +29,9 @@ vim.api.nvim_set_keymap("n", "zj", "zb", { noremap = true })
 -- Remove search highlight.
 vim.api.nvim_set_keymap("n", "<C-n>", ":noh<CR>", { noremap = true })
 
+-- Disable s in normal mode.
+vim.api.nvim_set_keymap("n", "s", "<Nop>", { noremap = true })
+
 -- Split window
 vim.api.nvim_set_keymap("n", "ss", "<C-w>s", { noremap = true })
 vim.api.nvim_set_keymap("n", "sv", "<C-w>v", { noremap = true })
@@ -42,9 +45,6 @@ vim.api.nvim_set_keymap("n", "sl", "<C-w>l", { noremap = true })
 -- Tab
 vim.api.nvim_set_keymap("n", "gh", "gT", { noremap = true })
 vim.api.nvim_set_keymap("n", "gl", "gt", { noremap = true })
-
--- Disable s in normal mode.
-vim.api.nvim_set_keymap("n", "s", "<Nop>", { noremap = true })
 
 -- Increment/Decrement
 vim.keymap.set("n", "+", "<C-a>")
