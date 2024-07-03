@@ -1,5 +1,29 @@
 [
   // ===================================
+  // Search/replace
+  // ===================================
+  {
+    "key": "ctrl+/ f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "cmd+f",
+    "command": "-actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "ctrl+/ h",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "-editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+
+  // ===================================
   // Switch focus
   // ===================================
   {
@@ -74,6 +98,14 @@
     "command": "deleteFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   }, // 削除
+
+  // ===================================
+  // Git source control
+  // ===================================
+  {
+    "key": "cmd+g c",
+    "command": "git.openChange"
+  },
 
   // ===================================
   // Git Graph
