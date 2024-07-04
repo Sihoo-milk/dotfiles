@@ -28,7 +28,7 @@
   "explorer.compactFolders": false, // フォルダをコンパクト表示せずに階層で表示
   "workbench.tree.indent": 15, // Explorerのインデント
   "workbench.tree.renderIndentGuides": "always",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
 
   // Editor
   // -----------------------------------
@@ -53,7 +53,7 @@
   // Panel
   // -----------------------------------
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.defaultProfile.osx": "zsh", // ターミナルのShellをZshに変更
+  "terminal.integrated.defaultProfile.osx": "zsh",
 
   // -- Font
   "terminal.integrated.fontFamily": "'HackGen35 Console NF'",
