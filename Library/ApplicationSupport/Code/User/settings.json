@@ -205,6 +205,10 @@
 
   "vim.normalModeKeyBindingsNonRecursive": [
     {
+      "before": ["<leader>", "e"],
+      "commands": [{ "command": "workbench.action.toggleSidebarVisibility" }]
+    },
+    {
       "before": ["<Leader>", ":"],
       "commands": [{ "command": "workbench.action.showCommands" }]
     }, // コマンドパレット
