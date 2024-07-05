@@ -1,8 +1,7 @@
 {
-  "singleQuote": true,
-  "trailingComma": "none",
   "singleAttributePerLine": true,
   "htmlWhitespaceSensitivity": "strict",
+  "useTabs": true,
   "overrides": [
     {
       "files": "*.html",
