@@ -1,7 +1,6 @@
 {
   "singleAttributePerLine": true,
   "htmlWhitespaceSensitivity": "strict",
-  "useTabs": true,
   "overrides": [
     {
       "files": "*.html",
