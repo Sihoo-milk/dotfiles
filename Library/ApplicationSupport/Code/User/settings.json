@@ -34,7 +34,7 @@
   // -----------------------------------
   "editor.minimap.enabled": false,
   "editor.lineNumbers": "relative",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "boundary", // 単語間の単一スペースは可視化しない
   "editor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
 
   // -- Font
