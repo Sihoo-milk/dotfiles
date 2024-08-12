@@ -1,3 +1,3 @@
 return {
-	"vim-trailing-whitespace",
+	"bronson/vim-trailing-whitespace",
 }
