@@ -50,6 +50,7 @@
   "diffEditor.wordWrap": "on", // 長いコードの時、見た目だけ折り返す
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.experimental.showMoves": true,
+  "diffEditor.renderSideBySide": true,
 
   // Panel
   // -----------------------------------
