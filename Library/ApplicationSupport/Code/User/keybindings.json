@@ -106,6 +106,14 @@
     "key": "cmd+g c",
     "command": "git.openChange"
   },
+  {
+    "key": "cmd+g space",
+    "command": "git.stage"
+  },
+  {
+    "key": "cmd+g shift+space",
+    "command": "git.unstage"
+  }
 
   // ===================================
   // Git Graph
