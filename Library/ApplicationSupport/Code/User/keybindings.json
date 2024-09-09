@@ -104,7 +104,7 @@
   // ===================================
   {
     "key": "cmd+g c",
-    "command": "git.openChange"
+    "command": "git.commit"
   },
   {
     "key": "cmd+g space",
@@ -113,7 +113,7 @@
   {
     "key": "cmd+g shift+space",
     "command": "git.unstage"
-  }
+  },
 
   // ===================================
   // Git Graph
