@@ -103,8 +103,8 @@
   // Git source control
   // ===================================
   {
-    "key": "cmd+g c",
-    "command": "git.openChange"
+    "key": "cmd+g n",
+    "command": "git.branchFrom"
   },
   {
     "key": "cmd+g space",
@@ -113,7 +113,11 @@
   {
     "key": "cmd+g shift+space",
     "command": "git.unstage"
-  }
+  },
+  {
+    "key": "cmd+g c",
+    "command": "git.commit"
+  },
 
   // ===================================
   // Git Graph
