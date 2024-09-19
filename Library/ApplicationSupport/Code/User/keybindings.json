@@ -1,29 +1,5 @@
 [
   // ===================================
-  // Search/replace
-  // ===================================
-  {
-    "key": "ctrl+/ f",
-    "command": "actions.find",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "cmd+f",
-    "command": "-actions.find",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "ctrl+/ h",
-    "command": "editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-  {
-    "key": "alt+cmd+f",
-    "command": "-editor.action.startFindReplaceAction",
-    "when": "editorFocus || editorIsOpen"
-  },
-
-  // ===================================
   // Switch focus
   // ===================================
   {
@@ -48,8 +24,9 @@
   },
 
   // ===================================
-  // Moving on the command palette
+  // Command Center
   // ===================================
+  // -- Moving on the command palette
   {
     "key": "ctrl+j",
     "command": "workbench.action.quickOpenSelectNext",
@@ -62,21 +39,7 @@
   },
 
   // ===================================
-  // Moving on the autocomplete list
-  // ===================================
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-
-  // ===================================
-  // Explorer
+  // Sidebars
   // ===================================
   {
     "key": "shift+n",
@@ -98,6 +61,65 @@
     "command": "deleteFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   }, // 削除
+
+  // ===================================
+  // Editor
+  // ===================================
+  // -- Moving on the autocomplete list
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+
+  // -- Tab switching
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor",
+    "when": "!editorTextFocus"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor",
+    "when": "!editorTextFocus"
+  },
+
+  // -- Search/replace
+  {
+    "key": "ctrl+/ f",
+    "command": "actions.find",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "cmd+f",
+    "command": "-actions.find",
+    "when": "editorFocus || editorIsOpen"
+  }, // Macでの標準的な検索ショートカットを無効化
+  {
+    "key": "ctrl+/ h",
+    "command": "editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  },
+  {
+    "key": "alt+cmd+f",
+    "command": "-editor.action.startFindReplaceAction",
+    "when": "editorFocus || editorIsOpen"
+  }, // Macでの標準的な置換ショートカットを無効化
 
   // ===================================
   // Git source control
