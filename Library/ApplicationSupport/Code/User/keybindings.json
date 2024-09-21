@@ -145,11 +145,11 @@
   // Git Graph
   // ===================================
   {
-    "key": "shift+cmd+g shift+cmd+g",
+    "key": "cmd+shift+g cmd+shift+g",
     "command": "git-graph.view"
   },
   {
-    "key": "shift+cmd+g shift+cmd+f",
+    "key": "cmd+shift+g cmd+shift+f",
     "command": "git-graph.fetch"
   }
 ]
