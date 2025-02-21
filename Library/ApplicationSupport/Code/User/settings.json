@@ -166,6 +166,9 @@
   "vim.autoSwitchInputMethod.defaultIM": "0",
   "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\zenhan\\bin64\\zenhan.exe 0",
   "vim.autoSwitchInputMethod.switchIMCmd": "D:\\zenhan\\bin64\\zenhan.exe {im}",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
 
   // PHP Intelephense
   // -----------------------------------
