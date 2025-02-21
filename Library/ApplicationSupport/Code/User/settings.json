@@ -65,84 +65,25 @@
   // ===================================
   // Language/Framework
   // ===================================
-  "editor.tabSize": 2, // タブを押した時のスペースの数
-  "editor.formatOnPaste": true, // ペースト時にフォーマット
-  "editor.formatOnType": true, // タイプ時にフォーマット
-  "files.insertFinalNewline": true, // ファイル末尾に自動的に改行を挿入
-  "files.trimFinalNewlines": true, // ファイル末尾の連続した空行を自動で削除する
-  "files.trimTrailingWhitespace": true, // ファイルの保存時に末尾の空白をトリミング
-  "prettier.useEditorConfig": false,
 
   // HTML
   // -----------------------------------
-  "[html]": {
-    // -- Formatter
-    // "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // -- Auto format
-    "editor.formatOnSave": false
-  },
-
-  // -- Format options
-  "html.format.indentInnerHtml": false, // headとbodyをインデント
-  "html.format.indentHandlebars": false, // Handlebarsの式({{expression}})の内側がHandlebarsの式を基準にインデント
-  "html.format.extraLiners": "", // 指定タグの前に空行を追加する
-  "html.format.wrapLineLength": 0, // 1行あたりの最大文字数 (0 = 無効にする)
-  "html.format.wrapAttributes": "force-expand-multiline",
-  // "html.format.unformatted": "!DOCTYPE, meta, title, link, script, noscript", // フォーマット除外タグ
 
   // CSS
   // -----------------------------------
-  "[css]": {
-    // -- Formatter
-    // "editor.defaultFormatter": "vscode.html-language-features",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // -- Auto format
-    "editor.formatOnSave": false
-  },
-
   "css.lint.validProperties": ["composes"],
 
   // Sass
   // -----------------------------------
-  "[scss]": {
-    // -- Formatter
-    // "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // -- Auto format
-    "editor.formatOnSave": true
-  },
 
   // JavaScript
   // -----------------------------------
-  "[javascript]": {
-    // -- Formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // -- Auto format
-    "editor.formatOnSave": true
-  },
 
   // JSON
   // -----------------------------------
-  "[json]": {
-    // -- Formatter
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-
-    // -- Auto format
-    "editor.formatOnSave": true
-  },
 
   // EJS
   // -----------------------------------
-  "[ejs]": {
-    // -- Formatter
-    "editor.defaultFormatter": "vscode.html-language-features",
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
   "html.format.templating": true, // EJSのフォーマット設定
   "files.associations": {
     "*.ejs ": "html"
@@ -150,30 +91,12 @@
 
   // Svelte
   // -----------------------------------
-  "[svelte]": {
-    // -- Formatter
-    // "editor.defaultFormatter": "esbenp.prettier-vscode"
-
-    // -- Auto format
-    "editor.formatOnSave": false
-  },
 
   // PHP
   // -----------------------------------
-  "[php]": {
-    // -- Formatter
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
-
-    // -- Auto format
-    "editor.formatOnSave": false
-  },
 
   // Markdown
   // -----------------------------------
-  "[markdown]": {
-    // -- Auto format
-    "editor.formatOnSave": true
-  },
 
   // ===================================
   // Emmet
@@ -244,36 +167,8 @@
   "vim.autoSwitchInputMethod.obtainIMCmd": "D:\\zenhan\\bin64\\zenhan.exe 0",
   "vim.autoSwitchInputMethod.switchIMCmd": "D:\\zenhan\\bin64\\zenhan.exe {im}",
 
-  // Live Server
-  // -----------------------------------
-
-  // Live Sass Compiler
-  // -----------------------------------
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/dist/css"
-    }
-  ],
-  "liveSassCompile.settings.excludeList": [
-    // -- 対象外とするフォルダを指定
-    "**/node_modules/**",
-    ".vscode/**",
-    ".history/**"
-  ],
-  "liveSassCompile.settings.autoprefix": [
-    // -- ベンダープレフィックスの指定
-    "last 2 versions",
-    "Android >= 4",
-    "ios_saf >= 8"
-  ],
-
   // PHP Intelephense
   // -----------------------------------
-  "php.validate.enable": false,
-  "php.suggest.basic": false,
-
   "intelephense.stubs": [
     "apache",
     "bcmath",
@@ -353,8 +248,5 @@
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.format.braces": "k&r",
-
-  // Markdown
-  // -----------------------------------
+  "intelephense.format.braces": "k&r"
 }
