@@ -63,7 +63,7 @@
   "terminal.integrated.lineHeight": 1.4,
 
   // ===================================
-  // Format
+  // Language/Framework
   // ===================================
   "editor.tabSize": 2, // タブを押した時のスペースの数
   "editor.formatOnPaste": true, // ペースト時にフォーマット
