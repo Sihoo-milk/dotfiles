@@ -65,6 +65,7 @@
   // ===================================
   // Language/Framework
   // ===================================
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
 
   // HTML
   // -----------------------------------
