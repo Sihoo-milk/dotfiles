@@ -120,6 +120,7 @@
   "vim.vimrc.path": "/Users/maenotomohiro/.vimrc",
   "vim.statusBarColorControl": false, // statusbarの色のコントロールをする
   "vim.leader": "<space>", // Map Leaderの設定
+  "vim.useCtrlKeys": true,
   "vim.useSystemClipboard": true, // system clipboardと同期する
   "vim.hlsearch": true,
   "vim.visualstar": true, // カーソル上にあるワードを"*"で検索
@@ -252,5 +253,9 @@
   "intelephense.diagnostics.undefinedFunctions": false,
   "intelephense.diagnostics.undefinedMethods": false,
   "intelephense.diagnostics.undefinedTypes": false,
-  "intelephense.format.braces": "k&r"
+  "intelephense.format.braces": "k&r",
+
+  // Svelte for VS Code
+  // -----------------------------------
+  "svelte.enable-ts-plugin": true
 }
