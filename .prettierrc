@@ -3,16 +3,9 @@
   "htmlWhitespaceSensitivity": "strict",
   "overrides": [
     {
-      "files": "*.html",
+      "files": "*.js",
       "options": {
-        "doctype": "<!DOCTYPE html>"
-      }
-    },
-    {
-      "files": "*.scss",
-      "options": {
-        "parser": "scss",
-        "singleQuote": false
+        "singleQuote": true
       }
     }
   ]
