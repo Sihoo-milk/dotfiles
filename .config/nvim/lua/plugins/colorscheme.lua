@@ -1,10 +1,5 @@
 return {
-	{ "cocopon/iceberg.vim" },
-
-	{
-		"LazyVim/LazyVim",
-		opts = {
-			colorscheme = "iceberg",
-		},
-	},
+	"folke/tokyonight.nvim",
+	lazy = true,
+	opts = { style = "night" },
 }
