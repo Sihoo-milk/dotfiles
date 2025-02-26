@@ -42,25 +42,40 @@
   // Sidebars
   // ===================================
   {
-    "key": "shift+n",
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  }, // Open file / Toggle folder
+  {
+    "key": "n",
     "command": "explorer.newFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }, // 新規ファイル作成
+  }, // Create new files
   {
-    "key": "shift+k",
+    "key": "f",
     "command": "explorer.newFolder",
-    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }, // 新規フォルダ作成
+    "when": "explorerViewletFocus && explorerViewletVisible"
+  }, // Create new folders
   {
-    "key": "shift+r",
+    "key": "r",
     "command": "renameFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }, // リネーム
+  }, // Rename
   {
-    "key": "shift+d",
+    "key": "d",
     "command": "deleteFile",
     "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
-  }, // 削除
+  }, // Delete
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  }, // Copy
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
+  }, // Paste
 
   // ===================================
   // Editor
