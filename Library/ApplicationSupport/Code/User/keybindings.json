@@ -54,7 +54,7 @@
   {
     "key": "f",
     "command": "explorer.newFolder",
-    "when": "explorerViewletFocus && explorerViewletVisible"
+    "when": "explorerViewletFocus && explorerViewletVisible && !inputFocus"
   }, // Create new folders
   {
     "key": "r",
